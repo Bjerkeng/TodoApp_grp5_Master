@@ -7,6 +7,16 @@ ourServer.set('port', port);
 ourServer.use(express.static('public'));
 ourServer.use(bodyParser.json());
 
+/*
+const users = [];
+ourServer.post("/api/user",function(req, res)){
+               let user = req.body;
+               user.id = usrs.length +1;
+               users.push(user);
+res.json(user).end()
+               }
+*/
+
 ourServer.post("/api/user",function (req, res) {
     res.send(req.body.fornavn).end();
 });
