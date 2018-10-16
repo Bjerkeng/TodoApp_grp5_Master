@@ -1,3 +1,4 @@
+
 const { Pool, Client } = require('pg')
 const connectionString = process.env.DATABASE_URL;
       
@@ -39,3 +40,4 @@ db.update = function(query){
 };
 
 module.exports = db
+
