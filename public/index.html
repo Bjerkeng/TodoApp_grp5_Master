@@ -7,27 +7,128 @@
 
 <h1>ToDo App</h1>
 
-    <legend>Login</legend>
+<div id="content">
 
-    Brukernavn: <input type="text" id="username" name="user">
-    Password: <input type="text" id="password" name="password">
-    <button type="button" id="login" name="login">Log in</button>
+    </div>
+    <template id="addRequestTemplate">
+        <form>
+            <label for="description">Description:</label>
+            <input type="text" id="description">
+            <button id="submitRequest" type="button">Submit</button>
+        </form>
+    </template>
 
+    <template id="authenticateUserUITemplate">
+        <form>
+            <label for="userName">User name:</label>
+            <input type="text" id="userName">
 
-<button type="button" id="createAccount" name="createAccount">Lag ny bruker</button>
+            <label for="password">Password:</label>
+            <input type="password" id="password">
 
+            <label for="rememberMe">Remember Me:</label>
+            <input type="checkbox" id="rememberMe">
+
+            <button type="button" id="loginBt">Login</button>
+            <button type="button" id="createUserBt">Create User</button>
+        </form>
+    </template>
+
+    <template id="createUserUITemplate">
+        <form>
+            <label for="userName">User name:</label>
+            <input type="text" id="userName">
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password">
+
+            <button type="button">Create</button>
+        </form>
+
+    </template>
 
 <script>
-
-    let logInButton = document.getElementById("login");
-    logInButton.onclick = function(e) {
-       
-        
-        
-        
-
+    
+    let authenticatedUser = null;
+    (function(){
+       if(!authenticatedUser){
+            displayLoginForm();
+            displayCreateUserForm();
+        } else{
+            displaySubmitRequestForm();
+        }
+    })();
+    
+    function addElement(element){
+            document.getElementById("content").appendChild(element);
+        }
+    function clearScreen(){
+        document.getElementById("content").innerHTML = "";
     }
-
+    
+    function createElementFromTemplate(templateID){
+        let template = document.querySelector("templateID");
+        var clone = document.importNode(template.content, true);
+        return clone;
+    }
+    
+    function displayLoginForm(){
+        let loginForm = createElementFromTemplate("#authenticateUserUITemplate")
+        //loginForm = window.document.body.appendChild(loginForm); 
+        
+        addElement(loginForm);
+        //window.document.body.appendChild(element);
+        
+        let loginBt = loginForm.querySelector("#loginBt");
+        let createBt = loginForm.querySelector("#createUserBt");
+        
+        loginBt.onClick = function(evt){
+            console.log("login bt clicked")
+            
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            
+            if(username.length > 0 && password.length > 0){
+                //time to log in
+                fetch(`app/user/${username}`).then(data =>{
+                    if(data.status === 200){
+                        return data.json()
+                    } else{
+                        return new PromiseRejectionEvent();
+                    }
+                }).then(json =>{
+                    //user is loggd in
+                    authenticatedUser = JSON.parse(json)
+                    clearScreen();
+                    displaySubmitRequestForm();
+                }).catch(err=>{
+                    //deal with error
+                })
+                
+            }else{
+                alert("danger danger")
+            }
+        }
+        
+        createBt.onClick = function(evt){
+            clearScreen();
+            displayCreateUserForm();
+            console.log("Create user bt clicked")
+        }
+    }
+    
+    function displayCreateUserForm(){
+        var element =  createElementFromTemplate("#creatUserUITemplate");
+        window.document.body.appendChild(element);
+    }
+    
+    function displaySubmitRequestForm(){
+        
+    }
+    
 </script>
 
 </body>
