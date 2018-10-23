@@ -70,8 +70,8 @@
     }
     
     function createElementFromTemplate(templateID){
-        let template = document.querySelector("#templateID");
-        var clone = document.importNode(template.content, true);
+        let template = document.querySelector("templateID");
+        let clone = document.importNode(template.content, true);
         return clone;
     }
     
@@ -90,7 +90,7 @@
         loginBt.onClick = function(evt){
             console.log("login bt clicked")
             
-            let username = document.getElementById("username").value;
+            let username = document.getElementById("userName").value;
             let password = document.getElementById("password").value;
             
             if(username.length > 0 && password.length > 0){
