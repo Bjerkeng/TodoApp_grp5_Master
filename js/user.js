@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/app/users', function(req,res,next){
+router.get('/ourServer/users', function(req,res,next){
     let query = "Select * from Users";
     let users = db.select(query);
     
@@ -12,7 +12,7 @@ router.get('/app/users', function(req,res,next){
     }
 });
 
-router.post('/app/users', function(req,res,next){
+router.post('/ourServer/users', function(req,res,next){
     
     let userEmail = req.body.email;
     let userName = req.body.name;
@@ -25,7 +25,7 @@ router.post('/app/users', function(req,res,next){
     res.status(code).json({}).end();
 })
 
-router.get('/app/user/:userName/:todolistID/:itemID', function(req,res,next){
+router.get('/ourServer/user/:userName/:todolistID/:itemID', function(req,res,next){
     
     let passwordHash = req.body.pswHash;
     let userName = req.params["userName"]
