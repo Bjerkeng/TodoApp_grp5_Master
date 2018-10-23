@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var db = require("./db.js")
 
 router.get('/app/users', function(req,res,next){
     let query = "Select * from Users";
@@ -12,7 +13,7 @@ router.get('/app/users', function(req,res,next){
     }
 });
 
-router.post('/app/users', function(req,res,next){
+router.post('/app/user', function(req,res,next){
     
     let userEmail = req.body.email;
     let userName = req.body.name;

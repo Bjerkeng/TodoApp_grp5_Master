@@ -3,12 +3,16 @@ const bodyParser = require('body-parser');
 const ourServer = express();
 const port = (process.env.PORT || 8080);
 
+const db = require("./js/db.js"); 
+const user = require("./js/user.js");
+
 //let user = db.select("Selct * from Users where id=123")
 
 
 ourServer.set('port', port);
 ourServer.use(express.static('public'));
 ourServer.use(bodyParser.json());
+
 ourServer.use(user);
 
 ourServer.listen(ourServer.get('port'), function () {
