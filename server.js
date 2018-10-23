@@ -8,7 +8,6 @@ const port = (process.env.PORT || 8080);
 //----------------------------------------------------------------------------
 
 const authorize = require("./authorize.js");
-const db = require("./js/db.js");
 const user = require("./js/user.js");
 
 //-------------------------------------------------------------
