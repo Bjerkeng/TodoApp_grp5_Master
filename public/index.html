@@ -88,7 +88,7 @@
         let loginBt = loginForm.querySelector("#loginBt");
         let createBt = loginForm.querySelector("#createUserBt");
         
-        loginBt.onClick = function(evt){
+        loginBt.onclick = function(evt){
             console.log("login bt clicked")
             
             let username = document.getElementById("userName").value;
@@ -116,7 +116,7 @@
             }
         }
         
-        createBt.onClick = function(evt){
+        createBt.onclick = function(evt){
             clearScreen();
             displayCreateUserForm();
             console.log("Create user bt clicked")
