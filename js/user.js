@@ -60,4 +60,4 @@ router.post('/app/users', function(req,res,next){
 })*/
 
 const user = {}
-module.exports = user;
+module.exports = router;
