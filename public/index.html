@@ -75,6 +75,8 @@
         return clone;
     }
     
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+    
     function displayLoginForm(){
         let loginForm = createElementFromTemplate("#authenticateUserUITemplate")
         //loginForm = window.document.body.appendChild(loginForm); 
@@ -120,10 +122,14 @@
         }
     }
     
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+    
     function displayCreateUserForm(){
         var element =  createElementFromTemplate("#creatUserUITemplate");
         window.document.body.appendChild(element);
     }
+    
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
     
     function displaySubmitRequestForm(){
         
