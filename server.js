@@ -20,11 +20,16 @@ ourServer.listen(ourServer.get('port'), function () {
 
 const authorize = require("./authorize.js");
 const db = require("./js/db.js");
-const user = require("./js/user.js")
+const user = require("./js/user.js");
 
 //Post, Get, list
 //----------------------------------------------------------------------------
-/*                        
+/* 
+ourServer.get('/app/requsts', function(req,res, next){
+    res.json(studentNames).end();
+})
+
+                       
 ourServer.GET("/api/list/:listID", auth ,function (req, res) {
     //return list.
 });
