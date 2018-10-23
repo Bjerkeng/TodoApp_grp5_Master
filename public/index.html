@@ -71,7 +71,7 @@
     }
     
     function createElementFromTemplate(templateID){
-        let template = document.querySelector("templateID");
+        let template = document.querySelector(templateID);
         let clone = document.importNode(template.content, true);
         return clone;
     }
