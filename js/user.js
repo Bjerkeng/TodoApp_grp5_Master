@@ -57,7 +57,16 @@ router.post('/app/users', function(req,res,next){
     
     let code = db.update(query) ? 200:500;
     res.status(code).json({}).end();
+ 
+ 
+ router.delete('/delete/users', function(req,res,next){
     
+    let query = `UPDATE user SET hash = ${updatePassword} WHERE email = ${checkId}`;
+    
+    let code = db.update(query) ? 200:500;
+    res.status(code).json({}).end();
+    
+}
     
 router.post('/app/users', function(req,res,next){
     let checkId = req.body.id;
