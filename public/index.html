@@ -135,7 +135,7 @@
             body:{
                 name:userName,
                 pswHash:password,
-                userRole:role,
+                role:role,
                 email:email
             },
             headers: {
@@ -179,7 +179,7 @@
                 let email = document.getElementById("email").value;
                 let role = USER_ROLE;
 
-                fetch('app/user',{
+                fetch('/app/user',{
                     method:"POST",
                     body:{
                         name:userName,
