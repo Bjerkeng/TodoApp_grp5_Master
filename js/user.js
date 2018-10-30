@@ -33,7 +33,7 @@ router.get('/app/user/:userName/:todolistID/:itemID', function(req,res,next){
     let userName = req.params["userName"]
     
     
-    let query = `SELCT * from Users WHERE userName='${userName}' and hash='${passwordHash}'`;
+    let query = `SELECT * from Users WHERE userName='${userName}' and hash='${passwordHash}'`;
     
     let user = db.select(query);
     

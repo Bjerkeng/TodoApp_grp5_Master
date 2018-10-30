@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
-
+<body>
 <h1>ToDo App</h1>
 
 <div id="content">
@@ -46,14 +46,15 @@
             <label for="password">Password:</label>
             <input type="password" id="password">
 
-            <button type="button">Create</button>
+            <button>Create</button>
         </form>
 
     </template>
 
 <script>
-    
+    const USER_ROLE = 42;
     let authenticatedUser = null;
+    
     (function(){
        if(!authenticatedUser){
             displayLoginForm();
@@ -93,6 +94,9 @@
             
             let username = document.getElementById("userName").value;
             let password = document.getElementById("password").value;
+            let email = document.getElementById("email").value;
+            
+            
             
             if(username.length > 0 && password.length > 0){
                 //time to log in
@@ -116,6 +120,43 @@
             }
         }
         
+        /*
+    let form = document.getElementById("createUserForm");
+    form.onsubmit = function(evt){
+        evt.preventDefault();
+        
+        let userName = document.getElementById("userName").value;
+        let password = document.getElementById("password").value;
+        let email = document.getElementById("email").value;
+        let role = USER_ROLE;
+        
+        fetch('app/user',{
+            method:"POST",
+            body:{
+                name:userName,
+                pswHash:password,
+                userRole:role,
+                email:email
+            },
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            },
+            
+        }).then(function(data){
+            if(data.status < 400){
+                return data.json();
+            }
+        }).then(function(createdUser){
+            if(createdUser.id){
+                //We have a newly created user!!
+                clearScreen();
+                displayLoginForm();
+                
+            }
+        });
+    }
+        */
+        
         createBt.onclick = function(evt){
             clearScreen();
             displayCreateUserForm();
@@ -126,8 +167,43 @@
     /////////////////////////////////////////////////////////////////////////////////////////////////////
     
     function displayCreateUserForm(){
-        var element =  createElementFromTemplate("#createUserUITemplate");
+        let element =  createElementFromTemplate("#createUserUITemplate");
         window.document.body.appendChild(element);
+        
+            let form = document.getElementById("createUserForm");
+            form.onsubmit = function(evt){
+                evt.preventDefault();
+
+                let userName = document.getElementById("userName").value;
+                let password = document.getElementById("password").value;
+                let email = document.getElementById("email").value;
+                let role = USER_ROLE;
+
+                fetch('app/user',{
+                    method:"POST",
+                    body:{
+                        name:userName,
+                        pswHash:password,
+                        userRole:role,
+                        email:email
+                    },
+                    headers: {
+                        "Content-Type": "application/json; charset=utf-8"
+                    },
+
+                }).then(function(data){
+                    if(data.status < 400){
+                        return data.json();
+                    }
+                }).then(function(createdUser){
+                    if(createdUser.id){
+                        //We have a newly created user!!
+                        clearScreen();
+                        displayLoginForm();
+
+                    }
+                });
+            }
     }
     
     /////////////////////////////////////////////////////////////////////////////////////////////////////
