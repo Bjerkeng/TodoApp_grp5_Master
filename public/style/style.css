@@ -21,10 +21,16 @@ h1{
 }
 #userName{
     width:100%;
+    margin-top:5px;
+    margin-bottom:5px;
 }
 #password{
     width:100%;
+    margin-top:5px;
+    margin-bottom:5px;
 }
 #email{
     width:100%;
+    margin-top:5px;
+    margin-bottom:5px;
 }
