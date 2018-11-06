@@ -27,13 +27,13 @@ router.post('/app/user', function(req,res,next){
     res.status(code).json({}).end();
 })
 
-router.get('/app/user/:userName/:todolistID/:itemID', function(req,res,next){
+router.get('/app/user/:userName', function(req,res,next){
     
     let passwordHash = req.body.pswHash;
     let userName = req.params["userName"]
     
     
-    let query = `SELECT * from Users WHERE userName='${userName}' and hash='${passwordHash}'`;
+    let query = `SELECT * from Users WHERE username='${userName}' and hash='${passwordHash}'`;
     
     let user = db.select(query);
     
