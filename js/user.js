@@ -24,6 +24,9 @@ router.post('/app/user',async function(req,res,next){
     
      let query = `INSERT INTO "public"."Users"("email", "username", "hash", "role") 
         VALUES('${userEmail}', '${userName}', '${passwordHash}', ${userRole}) RETURNING "id", "email", "username", "hash", "role"`;
+    
+    console.log(query);
+    
     let code = await db.insert(query) ? 200:500;
     res.status(code).json({}).end();
 })
