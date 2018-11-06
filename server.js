@@ -9,7 +9,7 @@ const port = (process.env.PORT || 8080);
 
 const authorize = require("./authorize.js");
 const user = require("./js/user.js");
-
+const que = require("./js/requestQue.js") // Module for the que of questions / requests for help.
 //-------------------------------------------------------------
 
 ourServer.set('port', port);
@@ -17,6 +17,12 @@ ourServer.use(express.static('public'));
 ourServer.use(bodyParser.json());
 
 ourServer.use(user);
+ourServer.use(que);
+
+ourServer.use(function(err, req, res, next) {
+    console.error(err.stack);
+    res.status(500).send('Oops thats bad');
+});
 
 ourServer.listen(ourServer.get('port'), function () {
     console.log('server running', ourServer.get('port'));
