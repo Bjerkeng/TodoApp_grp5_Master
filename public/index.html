@@ -186,11 +186,11 @@
     let redBt = document.querySelector("#red");
     let blueBt = document.querySelector("#blue");
     redBt.onclick = function(){
-            document.getElementsTagName("body").style.background-color = "red";
+            document.getElementsByTagName("body").style.background-color = "red";
             console.log("red bt clicked")
         }
     blueBt.onclick = function(){
-        document.getElementsTagName("body").style.background-color = "blue";
+        document.getElementsByTagName("body").style.background-color = "blue";
         console.log("blue bt clicked")
     }
     
