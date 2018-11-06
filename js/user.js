@@ -34,7 +34,7 @@ router.get('/app/user/:userName', function(req,res,next){
     let userName = req.params["userName"]
     
     
-    let query = `SELECT * from users WHERE username='${userName}' and hash='${passwordHash}'`;
+    let query = `SELECT * from users WHERE userName='${userName}' and hash='${passwordHash}'`;
     
     let user = db.select(query);
     
@@ -45,8 +45,8 @@ router.get('/app/user/:userName', function(req,res,next){
         res.status(401).json(user).end();
     }
     
-    let code = db.insert(query) ? 200:500;
-    res.status(code).json({}).end();
+    //let code = db.insert(query) ? 200:500;
+    //res.status(code).json({}).end();
 })
 /*
 router.post('/app/users', function(req,res,next){
