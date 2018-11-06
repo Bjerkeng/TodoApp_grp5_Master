@@ -15,7 +15,7 @@ router.get('/app/user', function(req,res,next){
 });
 
 
-router.post('/app/user', function(req,res,next){
+router.post('/app/user',async function(req,res,next){
   
     let userEmail = req.body.email;
     let userName = req.body.name;
@@ -24,7 +24,7 @@ router.post('/app/user', function(req,res,next){
     
     let query = `INSERT INTO "public"."users"("email", "username", "hash", "role") VALUES('${userEmail}','${userName}', '${passwordHash}', ${userRole}) RETURNING "id", "email", "hash", "role"`;
     
-    let code = db.insert(query) ? 200:500;
+    let code = await db.insert(query) ? 200:500;
     res.status(code).json({}).end();
 })
 
