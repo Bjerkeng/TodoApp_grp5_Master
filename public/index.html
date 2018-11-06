@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
-<h1>ToDo App</h1>
-
+<div id="container">
+<div id="header">
+<h1>ToDo Applikasjonen</h1>
+</div>
 <div id="content">
-
-    </div>
+</div>
     <template id="addRequestTemplate">
         <form>
             <label for="description">Description:</label>
@@ -21,14 +24,14 @@
 
     <template id="authenticateUserUITemplate">
         <form>
-            <label for="userName">User name:</label>
-            <input type="text" id="userName">
+            <label for="userName">Username:</label><br/>
+            <input type="text" id="userName"><br/>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password">
+            <label for="password">Password:</label><br/>
+            <input type="password" id="password"><br/>
 
-            <label for="rememberMe">Remember Me:</label>
-            <input type="checkbox" id="rememberMe">
+            <label for="rememberMe">Remember Me:</label><br/>
+            <input type="checkbox" id="rememberMe"><br/>
 
             <button type="button" id="loginBt">Login</button>
             <button type="button" id="createUserBt">Create User</button>
@@ -37,19 +40,20 @@
 
     <template id="createUserUITemplate">
         <form>
-            <label for="userName">User name:</label>
-            <input type="text" id="userName">
+            <label for="userName">Username:</label><br/>
+            <input type="text" id="userName"><br/>
 
-            <label for="email">E-mail:</label>
-            <input type="email" id="email">
+            <label for="email">E-mail:</label><br/>
+            <input type="email" id="email"><br/>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password">
+            <label for="password">Password:</label><br/>
+            <input type="password" id="password"><br/>
 
             <button>Create</button>
         </form>
 
     </template>
+</div>
 
 <script>
     const USER_ROLE = 42;
@@ -120,43 +124,6 @@
             }
         }
         
-        /*
-    let form = document.getElementById("createUserForm");
-    form.onsubmit = function(evt){
-        evt.preventDefault();
-        
-        let userName = document.getElementById("userName").value;
-        let password = document.getElementById("password").value;
-        let email = document.getElementById("email").value;
-        let role = USER_ROLE;
-        
-        fetch('app/user',{
-            method:"POST",
-            body:{
-                name:userName,
-                pswHash:password,
-                userRole:role,
-                email:email
-            },
-            headers: {
-                "Content-Type": "application/json; charset=utf-8"
-            },
-            
-        }).then(function(data){
-            if(data.status < 400){
-                return data.json();
-            }
-        }).then(function(createdUser){
-            if(createdUser.id){
-                //We have a newly created user!!
-                clearScreen();
-                displayLoginForm();
-                
-            }
-        });
-    }
-        */
-        
         createBt.onclick = function(evt){
             clearScreen();
             displayCreateUserForm();
@@ -179,7 +146,7 @@
                 let email = document.getElementById("email").value;
                 let role = USER_ROLE;
 
-                fetch('app/user',{
+                fetch('/app/user',{
                     method:"POST",
                     body:{
                         name:userName,
