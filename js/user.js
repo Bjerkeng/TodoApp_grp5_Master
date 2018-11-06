@@ -3,7 +3,7 @@ var router = express.Router();
 var db = require("./db.js")
 
 router.get('/app/user', function(req,res,next){
-    let query = "Select * from Users";
+    let query = "Select * from users";
     let users = db.select(query);
     
     if(users){
