@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
-<body>
+<body id="body">
 <div id="container">
 <div id="header">
 <h1>ToDo Applikasjonen</h1>
@@ -186,11 +186,11 @@
     let redBt = document.querySelector("#red");
     let blueBt = document.querySelector("#blue");
     redBt.onclick = function(){
-            document.getElementsByTagName("body").style.background-color = "red";
+            document.getElementsById("body").style.background-color = "red";
             console.log("red bt clicked")
         }
     blueBt.onclick = function(){
-        document.getElementsByTagName("body").style.background-color = "blue";
+        document.getElementsById("body").style.background-color = "blue";
         console.log("blue bt clicked")
     }
     
