@@ -20,9 +20,9 @@ router.post('/app/user',async function(req,res,next){
     let userEmail = req.body.email;
     let userName = req.body.name;
     let passwordHash = req.body.pswHash;
-    let userRole = req.body.role;
+    let userRole = req.body.userRole;
     
-     let query = `INSERT INTO "public"."Users"("email", "username", "hash", "role") 
+     let query = `INSERT INTO "public"."users"("email", "username", "hash", "role") 
         VALUES('${userEmail}', '${userName}', '${passwordHash}', ${userRole}) RETURNING "id", "email", "username", "hash", "role"`;
     
     console.log(query);
