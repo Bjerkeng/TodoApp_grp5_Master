@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
-<body id="body">
+<body>
+<div id="theme">
 <div id="container">
 <div id="header">
 <h1>ToDo Applikasjonen</h1>
@@ -56,7 +57,7 @@
 </div>
 <button type="button" id="red">Theme Red</button>
 <button type="button" id="blue">Theme Blue</button>
-
+</div>
 <script>
     const USER_ROLE = 42;
     let authenticatedUser = null;
@@ -182,17 +183,18 @@
     function displaySubmitRequestForm(){
         
     }
-    /*
+    
     let redBt = document.querySelector("#red");
     let blueBt = document.querySelector("#blue");
+    
     redBt.onclick = function(){
-            document.getElementById("body").style.background-color = "red";
+            document.getElementById("theme").style.background-color = "red";
             console.log("red bt clicked")
         }
     blueBt.onclick = function(){
-        document.getElementById("body").style.background-color = "blue";
+        document.getElementById("theme").style.background-color = "blue";
         console.log("blue bt clicked")
-    }*/
+    
     
 </script>
 
