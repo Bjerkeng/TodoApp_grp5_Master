@@ -7,6 +7,7 @@ router.get('/app/user', function(req,res,next){
     let users = db.select(query);
     
     if(users){
+        console.log(users)
        res.status(200).json(JSON.parse(users));
     }else{
     //??
