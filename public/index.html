@@ -135,7 +135,7 @@
     
     function displayCreateUserForm(){
         let element =  createElementFromTemplate("#createUserUITemplate");
-        window.document.body.appendChild(element);
+        document.getElementById("content").appendChild(element);
         
             let form = document.getElementById("createUserForm");
             form.onsubmit = function(evt){
