@@ -54,6 +54,8 @@
 
     </template>
 </div>
+<button type="button" id="red">Theme Red</button>
+<button type="button" id="blue">Theme Blue</button>
 
 <script>
     const USER_ROLE = 42;
@@ -177,6 +179,17 @@
     
     function displaySubmitRequestForm(){
         
+    }
+    
+    let redBt = document.querySelector("#red");
+    let blueBt = document.querySelector("#blue");
+    redBt.onclick = function(){
+            $("body").css("color", "red")
+            console.log("red bt clicked")
+        }
+    blueBt.onclick = function(){
+        $("body").css("color", "blue")
+        console.log("blue bt clicked")
     }
     
 </script>
