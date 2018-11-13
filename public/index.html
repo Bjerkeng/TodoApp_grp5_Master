@@ -281,7 +281,7 @@
     
      function displayWelcome() {
             clearScreen();
-            let welcome = getTemplate("welcomeView");
+            let welcome = createElementFromTemplate("welcomeView");
             let bt = welcome.querySelector("#quotebt");
             bt.onclick = function (evt) {
                 fetchQuote();
