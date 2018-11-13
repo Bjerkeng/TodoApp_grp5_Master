@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/Bjerkeng/TodoApp_grp5_kladd#readme",
   "dependencies": {
+    "bcrypt": "^3.0.2",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
     "pg": "^7.6.0"
   }
 }
