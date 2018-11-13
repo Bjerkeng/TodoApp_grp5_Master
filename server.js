@@ -12,6 +12,7 @@ const user = require("./js/user.js");
 const que = require("./js/requestQue.js") // Module for the que of questions / requests for help.
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const db = require('./js/db.js')
 
 const SUPER_SECRET_KEY = process.env.TOKEN_KEY || "TransparantWindowsFlyingDonkeys"; // for use with web token.
 const DEBUG = true;
@@ -96,7 +97,7 @@ ourServer.get("/app/authenticate", async function (req, res, next) {
         let username = credentials[0].trim();
         let password = credentials[1].trim();
 
-        let user = await databaseQuery(username, password) // if the username and password are correct we will get a user object in return at this point.
+        let user = await db.select(`SELECT * from users WHERE username='${username}' and hash='${password}'`) ///databaseQuery(username, password) // if the username and password are correct we will get a user object in return at this point.
 
         if (user) {
             // There was a user in the database with the correct username and password
@@ -129,7 +130,7 @@ async function databaseQuery(username, password) {
 
     const userDatabase = [{
             id: 100,
-            name: "Ole",
+            name: "Vic",
             pswHash: "$2b$10$WOJeVBmVk9LzWSDJWIx.SO4z1bplwcOPib62VHda0.lG0dIJO7zPy" //12345678
         },
         {
@@ -142,7 +143,7 @@ async function databaseQuery(username, password) {
             name: "Doffen",
             pswHash: "$2b$10$gUGSms21rg4yQOUYanUnfeVsis1nyUuBaiWlMoQBsgn5Rf4kXS7Te"
         },
-    ];
+    ];    
 
     // 1. Find a user with the correct username 
     let foundUser = userDatabase.find(user => {
