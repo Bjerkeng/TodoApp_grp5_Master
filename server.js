@@ -151,7 +151,7 @@ async function databaseQuery(username, password) {
 
     // 2. If we found a user, check the password. 
     if (foundUser) {
-        const isCorrect = await bcrypt.compare(password, foundUser.pswHash); // We use bcrypt to compare the hash in the db with the password we recived. 
+        const isCorrect = await bcrypt.compare(password, foundUser.hash); // We use bcrypt to compare the hash in the db with the password we recived. 
         // 3. if the password is correct the userobject is parsed on
         if (!isCorrect) {
             foundUser = null;
