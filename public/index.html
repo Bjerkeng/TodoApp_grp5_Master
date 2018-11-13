@@ -123,7 +123,7 @@
             log("Starting authentication request", `Username ${username}`, `Password ${password}`);
             // We are going to base our authentication on basic authentication. This is a authentication scheme suported by http (RFC 7617)
             // Read more about it at https://en.wikipedia.org/wiki/Basic_access_authentication and https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme
-            let credentials = `Basic ${ btoa(userName + ":" + password)}`; // This creates a string that looks similar to  "Basic KL9zxHppU2VCX". btoa is a function of the window object.
+            let credentials = `Basic ${ btoa(username + ":" + password)}`; // This creates a string that looks similar to  "Basic KL9zxHppU2VCX". btoa is a function of the window object.
             let request = {
                 method: "GET",
                 headers: {
