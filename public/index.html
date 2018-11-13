@@ -112,7 +112,11 @@
             document.getElementById("content").appendChild(element);
         }
     function clearScreen(){
-        document.getElementById("content").innerHTML = "";
+        //document.getElementById("content").innerHTML = "";
+        let container = document.getElementById("content");
+            while (container.firstChild) {
+                container.removeChild(container.firstChild);
+            }
     }
     
     function createElementFromTemplate(templateID){
@@ -298,12 +302,12 @@
             let errView = document.getElementById("errorView");
             errView.setAttribute("hidden", true);
         }
-    function clearContainer() {
+/*    function clearContainer() {
             let container = document.getElementById("content");
             while (container.firstChild) {
                 container.removeChild(container.firstChild);
             }
-        }
+        }*/
     
     function log(...messages) {
             if (DEBUG) {
