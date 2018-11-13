@@ -294,6 +294,13 @@
             let errView = document.getElementById("errorView");
             errView.setAttribute("hidden", true);
         }
+    function log(...messages) {
+            if (DEBUG) {
+                messages.forEach(msg => {
+                    console.log(msg);
+                })
+            }
+        }
     
     let redBt = document.querySelector("#red");
     let blueBt = document.querySelector("#blue");
