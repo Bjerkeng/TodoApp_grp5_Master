@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link id="style" rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body>
 <div id="theme">
@@ -87,8 +87,9 @@
     
 </div>
 <div id="footer">
-    <button type="button" id="red">Theme Red</button>
-    <button type="button" id="blue">Theme Blue</button>
+    <button id="defaultStyle" type="button" name ="defaultTheme" onclick="changeStyle('style/style.css')">Default</button>
+    <button id="stylesheet1" type="button" name="darkTheme" onclick="changeStyle('style/theme1.css')">Dark</button>
+    <button id="stylesheet2" type="button" name="colorTheme" onclick="changeStyle('style/theme2.css')">Color</button>
 </div>
 </div>
 <script>
@@ -303,18 +304,10 @@
                 })
             }
         }
-    
-    let redBt = document.querySelector("#red");
-    let blueBt = document.querySelector("#blue");
-    
-    redBt.onclick = function(){
-            document.getElementById("theme").style.backgroundColor = "red";
-            console.log("red bt clicked");
+        function changeStyle(path){
+            document.getElementById("style").setAttribute("href", path);
+            
         }
-    blueBt.onclick = function(){
-        document.getElementById("theme").style.backgroundColor = "blue";
-        console.log("blue bt clicked");
-    }
     
 </script>
 
