@@ -37,6 +37,14 @@
             <button type="button" id="loginBt">Login</button>
             <button type="button" id="createUserBt">Create User</button>
         </form>
+        <div id="errorView" class="card error" hidden>
+            <div class="section">
+                <h1>Error</h1>
+            </div>
+            <div class="section">
+                <p id="msg"></p>
+            </div>
+        </div>
     </template>
 
     <template id="createUserUITemplate">
@@ -54,6 +62,29 @@
         </form>
 
     </template>
+    
+    <template id="welcomeView">
+        <div class="card">
+            <div class="section">
+                <h1>Welcome</h1>
+            </div>
+            <div class="section">
+                <button id="quotebt">Get Quote</button>
+            </div>
+            <div class="section">
+                <q id="quote"></q>
+            </div>
+        </div>
+        <div id="errorView" class="card error" hidden>
+            <div class="section">
+                <h1>Error</h1>
+            </div>
+            <div class="section">
+                <p id="msg"></p>
+            </div>
+        </div>
+    </template>
+    
 </div>
 <div id="footer">
     <button type="button" id="red">Theme Red</button>
@@ -86,6 +117,62 @@
         return clone;
     }
     
+    function authenticateUser(username, password) {
+            log("Starting authentication request", `Username ${userName}`, `Password ${password}`);
+            // We are going to base our authentication on basic authentication. This is a authentication scheme suported by http (RFC 7617)
+            // Read more about it at https://en.wikipedia.org/wiki/Basic_access_authentication and https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme
+            let credentials = `Basic ${ btoa(username + ":" + password)}`; // This creates a string that looks similar to  "Basic KL9zxHppU2VCX". btoa is a function of the window object.
+            let request = {
+                method: "GET",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'Authorization': credentials
+                }
+            }
+            fetch("/app/authenticate", request).then(function (respons) {
+                if (respons.status < 400) {
+                    // OK we are authenticated.
+                    return respons.json(); // Grab the JSON payload. 
+                } else if (respons.status === 401) {
+                    // Username or password was wrong, informe the user.
+                    return Promise.reject(new Error("Wrong username or password"));
+                } else {
+                    // Some other thing went wrong.
+                    return Promise.reject(new Error("Could not log you in at this time, try again later"));
+                }
+            }).then(function (responsJSON) {
+                authenticationToken = responsJSON.auth; // Because this is where the server puts the token.
+                authenticatedUser = responsJSON.user; // Information about the user. 
+                displayWelcome();
+            }).catch(function (err) {
+                // fetch could not complete the request.
+                displayError(err.message);
+            });
+        }
+    
+     function fetchQuote() {
+            let request = {
+                method: "GET",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'x-access-auth': authenticationToken
+                }
+            }
+            fetch("/app/quote", request).then(function (res) {
+                if (res.status < 400) {
+                    return res.json();
+                } else {
+                    return Promise.reject(new Error("Session not valid. log inn again"));
+                }
+            }).then(function (json) {
+                document.getElementById("quote").textContent = json.quote;
+            }).catch(function (err) {
+                displayError(err.message);
+            });
+        }
+    
     /////////////////////////////////////////////////////////////////////////////////////////////////////
     
     function displayLoginForm(){
@@ -100,14 +187,16 @@
         
         loginBt.onclick = function(evt){
             console.log("login bt clicked")
+            evt.preventDefault();
+            hideError();
             
             let username = document.getElementById("userName").value;
             let password = document.getElementById("password").value;
             let email = document.getElementById("email").value;
             
+            authenticateUser(username, password);
             
-            
-            if(username.length > 0 && password.length > 0){
+            /*if(username.length > 0 && password.length > 0){
                 //time to log in
                 fetch(`/app/user/${username}`).then(data =>{
                     if(data.status === 200){
@@ -126,7 +215,7 @@
                 
             }else{
                 alert("danger danger")
-            }
+            }*/
         }
         
         createBt.onclick = function(evt){
@@ -185,6 +274,26 @@
     function displaySubmitRequestForm(){
         
     }
+    
+     function displayWelcome() {
+            clearContainer();
+            let welcome = getTemplate("welcomeView");
+            let bt = welcome.querySelector("#quotebt");
+            bt.onclick = function (evt) {
+                fetchQuote();
+            }
+            document.body.appendChild(welcome);
+        }
+    
+    function displayError(msg) {
+            let errView = document.getElementById("errorView");
+            errView.removeAttribute("hidden");
+            errView.querySelector("#msg").textContent = msg;
+        }
+        function hideError() {
+            let errView = document.getElementById("errorView");
+            errView.setAttribute("hidden", true);
+        }
     
     let redBt = document.querySelector("#red");
     let blueBt = document.querySelector("#blue");
