@@ -14,8 +14,6 @@
 <div id="header">
 <h1>ToDo Applikasjonen</h1>
 </div>
-<div id="content">
-</div>
     <template id="addRequestTemplate">
         <form>
             <label for="description">Description:</label>
@@ -109,11 +107,11 @@
     })();
     
     function addElement(element){
-            document.getElementById("content").appendChild(element);
+            document.getElementById("container").appendChild(element);
         }
     function clearScreen(){
-        //document.getElementById("content").innerHTML = "";
-        let container = document.getElementById("content");
+        //document.getElementById("container").innerHTML = "";
+        let container = document.getElementById("container");
             while (container.firstChild) {
                 container.removeChild(container.firstChild);
             }
@@ -237,7 +235,7 @@
     
     function displayCreateUserForm(){
         let element =  createElementFromTemplate("#createUserUITemplate");
-        document.getElementById("content").appendChild(element);
+        document.getElementById("container").appendChild(element);
         
             let form = document.getElementById("createUserForm");
             form.onsubmit = function(evt){
