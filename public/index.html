@@ -297,6 +297,13 @@
             let errView = document.getElementById("errorView");
             errView.setAttribute("hidden", true);
         }
+    function clearContainer() {
+            let container = document.getElementById("container");
+            while (container.firstChild) {
+                container.removeChild(container.firstChild);
+            }
+        }
+    
     function log(...messages) {
             if (DEBUG) {
                 messages.forEach(msg => {
