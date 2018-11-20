@@ -68,10 +68,10 @@
         
         <form id="createTaskForm">
             <label for="task"></label> 
-            <input type="text" id="task"><br>
+            <input type="text" id="tittel"><br>
 
             <label for="description"></label> 
-            <input type="text" id="description"><br>
+            <input type="text" id="innhold"><br>
             
             <button type="button" id="submitTask">Submit</button>
         </form>
@@ -277,7 +277,33 @@
         let createTaskForm =  createElementFromTemplate("#createTaskTemplate");
         document.getElementById("content").appendChild(createTaskForm);
         submitTask.onclick = function (evt) {
-          //post
+          //evt.preventDefault();
+
+                let tittel = document.getElementById("tittel").value;
+                let innhold = document.getElementById("innhold").value;
+                let dueDate = "";
+                
+                fetch('/app/user',{
+                    method:"POST",
+                    body:JSON.stringify({
+                        tittel:tittel,
+                        innhold:innhold,
+                    }),
+                    headers: {
+                        "Content-Type": "application/json; charset=utf-8"
+                    },
+
+                }).then(function(data){
+                    if(data.status < 400){
+                        return data.json();
+                    }
+                }).then(function(createdPost){
+                    if(createdPost.id){
+                        console.log("Posten er lagt til i DB")
+                    }
+                }).catch(err =>{
+                console.error(err);
+            });
         }
         addElement(createTaskForm);
 
