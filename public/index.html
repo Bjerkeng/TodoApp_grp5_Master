@@ -86,6 +86,20 @@
         </div>
     </template>
     
+    
+    <template id="createTaskTemplate">
+        
+        <form id="createTaskForm">
+            <label for="task"></label> 
+            <input type="text" id="task"><br>
+
+            <label for="description"></label> 
+            <input type="text" id="description"><br>
+            
+            <button type="button" id="submitTask">Submit</button>
+        </form>
+    </template>
+    
 </div>
 <div id="footer">
     <button id="defaultStyle" type="button" name ="defaultTheme" onclick="changeStyle('style/style.css')">Default</button>
@@ -279,6 +293,18 @@
     
     /////////////////////////////////////////////////////////////////////////////////////////////////////
     
+    
+    /////////////
+    function displayCreateTaskForm(){
+        //clearContainer();
+        let createTaskForm =  createElementFromTemplate("#createTaskTemplate");
+        document.getElementById("content").appendChild(createTaskForm);
+
+        addElement(createTaskForm);
+
+
+    }
+    ///////////
     function displaySubmitRequestForm(){
         
     }
