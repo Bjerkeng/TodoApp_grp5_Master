@@ -7,12 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link id="basestyle" rel="stylesheet" type="text/css" href="./style/style.css">
     <link id="style" rel="stylesheet" type="text/css" href="./style/style.css">
-
-        <style>
-            *[hidden] {
-                display: none;
-            }
-        </style>
     </head>
 <body>
 <div id="theme">
@@ -92,6 +86,20 @@
         </div>
     </template>
     
+    
+    <template id="createTaskTemplate">
+        
+        <form id="createTaskForm">
+            <label for="task"></label> 
+            <input type="text" id="task"><br>
+
+            <label for="description"></label> 
+            <input type="text" id="description"><br>
+            
+            <button type="button" id="submitTask">Submit</button>
+        </form>
+    </template>
+    
 </div>
 <div id="footer">
     <button id="defaultStyle" type="button" name ="defaultTheme" onclick="changeStyle('style/style.css')">Default</button>
@@ -118,13 +126,17 @@
             document.getElementById("content").appendChild(element);
         }
     function clearScreen(){
-        document.getElementById("content").innerHTML = "";
+        //document.getElementById("content").innerHTML = "";
+        let container = document.getElementById("content");
+            while (container.firstChild) {
+                container.removeChild(container.firstChild);
+            }
     }
     
     function createElementFromTemplate(templateID){
         let template = document.querySelector(templateID);
-        let clone = document.importNode(template.content, true);
-        return clone;
+        template = document.importNode(template.content, true);
+        return template;
     }
     
     function authenticateUser(username, password) {
@@ -155,6 +167,11 @@
                 authenticationToken = responsJSON.auth; // Because this is where the server puts the token.
                 authenticatedUser = responsJSON.user; // Information about the user. 
                 displayWelcome();
+                
+                ///
+                displayCreateTaskForm();
+                //
+                
             }).catch(function (err) {
                 // fetch could not complete the request.
                 displayError(err.message);
@@ -249,7 +266,7 @@
                 let password = document.getElementById("password").value;
                 let email = document.getElementById("email").value;
                 let role = USER_ROLE;
-
+                
                 fetch('/app/user',{
                     method:"POST",
                     body:JSON.stringify({
@@ -281,13 +298,25 @@
     
     /////////////////////////////////////////////////////////////////////////////////////////////////////
     
+    
+    /////////////
+    function displayCreateTaskForm(){
+        //clearContainer();
+        let createTaskForm =  createElementFromTemplate("#createTaskTemplate");
+        document.getElementById("content").appendChild(createTaskForm);
+
+        addElement(createTaskForm);
+
+
+    }
+    ///////////
     function displaySubmitRequestForm(){
         
     }
     
      function displayWelcome() {
-            clearContainer();
-            let welcome = getTemplate("welcomeView");
+            clearScreen();
+            let welcome = createElementFromTemplate("#welcomeView");
             let bt = welcome.querySelector("#quotebt");
             bt.onclick = function (evt) {
                 fetchQuote();
@@ -304,12 +333,12 @@
             let errView = document.getElementById("errorView");
             errView.setAttribute("hidden", true);
         }
-    function clearContainer() {
-            let container = document.getElementById("container");
+/*    function clearContainer() {
+            let container = document.getElementById("content");
             while (container.firstChild) {
                 container.removeChild(container.firstChild);
             }
-        }
+        }*/
     
     function log(...messages) {
             if (DEBUG) {
