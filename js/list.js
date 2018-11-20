@@ -6,3 +6,6 @@ router.get('/app/posts', function(req, res, next){
     let query = "";
     let
 })
+
+const list = {}
+module.exports = router;

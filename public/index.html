@@ -63,30 +63,7 @@
         </form>
 
     </template>
-    
-    <template id="welcomeView">
-        <div class="card">
-            <div class="section">
-                <h1>Welcome</h1>
-            </div>
-            <div class="section">
-                <button id="quotebt">Get Quote</button>
-            </div>
-            <div class="section">
-                <q id="quote"></q>
-            </div>
-        </div>
-        <div id="errorView" class="card error" hidden>
-            <div class="section">
-                <h1>Error</h1>
-            </div>
-            <div class="section">
-                <p id="msg"></p>
-            </div>
-        </div>
-    </template>
-    
-    
+
     <template id="createTaskTemplate">
         
         <form id="createTaskForm">
@@ -166,12 +143,9 @@
             }).then(function (responsJSON) {
                 authenticationToken = responsJSON.auth; // Because this is where the server puts the token.
                 authenticatedUser = responsJSON.user; // Information about the user. 
-                displayWelcome();
-                
-                ///
+
                 displayCreateTaskForm();
-                //
-                
+
             }).catch(function (err) {
                 // fetch could not complete the request.
                 displayError(err.message);
@@ -297,33 +271,22 @@
     }
     
     /////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    
-    /////////////
+
     function displayCreateTaskForm(){
         //clearContainer();
         let createTaskForm =  createElementFromTemplate("#createTaskTemplate");
         document.getElementById("content").appendChild(createTaskForm);
-
+        submitTask.onclick = function (evt) {
+          //post
+        }
         addElement(createTaskForm);
 
-
     }
-    ///////////
+
     function displaySubmitRequestForm(){
         
     }
-    
-     function displayWelcome() {
-            clearScreen();
-            let welcome = createElementFromTemplate("#welcomeView");
-            let bt = welcome.querySelector("#quotebt");
-            bt.onclick = function (evt) {
-                fetchQuote();
-            }
-            document.body.appendChild(welcome);
-        }
-    
+
     function displayError(msg) {
             let errView = document.getElementById("errorView");
             errView.removeAttribute("hidden");
