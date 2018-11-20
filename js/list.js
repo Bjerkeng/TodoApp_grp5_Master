@@ -6,16 +6,21 @@ router.post('/app/posts', async function(req, res, next){
    // let query = "";
     let tittel = req.body.tittel;
     let innhold = req.body.innhold;
-    let userID = 23;
+    let userID = req.body.user.id;
 
-    let query = `INSERT INTO "public"."posts"("userID", "tittel", "innhold") 
-        VALUES('${userID}', '${tittel}', '${innhold}') RETURNING "postID", "userID", "tittel", "innhold", "date"`;
+    let query = `INSERT INTO "public"."posts"("userid", "tittel", "innhold") 
+        VALUES('${userID}', '${tittel}', '${innhold}') RETURNING *`;
 
 
     console.log(query);
 
-    let code = await db.insert(query) ? 200:500;
-    res.status(code).json({}).end()
+   
+    let post = await db.insert(query) 
+    if(post){
+    res.status(200).json(JSON.stringify(post)).end()
+        }else{
+            res.status(500).end()
+        }
 });
 
 
