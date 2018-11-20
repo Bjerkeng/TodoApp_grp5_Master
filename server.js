@@ -97,7 +97,7 @@ ourServer.get("/app/authenticate", async function (req, res, next) {
         let username = credentials[0].trim();
         let password = credentials[1].trim();
 
-        let user = await db.select(`SELECT * from users WHERE username='${username}' and hash='${password}'`) ///databaseQuery(username, password) // if the username and password are correct we will get a user object in return at this point.
+        let user = await db.select(`SELECT * from users WHERE userName='${userName}' and hash='${passwordHash}'`) ///databaseQuery(username, password) // if the username and password are correct we will get a user object in return at this point.
 
         if (user) {
             // There was a user in the database with the correct username and password
