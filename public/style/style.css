@@ -38,9 +38,10 @@ h1{
     border-radius: 10px;
 }
 #email{
-    width:100%;
+    width:auto;
     margin-top:5px;
     margin-bottom:5px;
+    border-radius: 10px;
 }
 #rememberMe{
     margin-top: 5px;
