@@ -4,30 +4,38 @@ h1{
     text-transform: uppercase;
     text-align: center;
 }
+
 #container{
     max-width: 100%;
     margin-left:auto;
     margin-right: auto;
 }
 #header{
-    width: 1200px;
+    width: auto;
     margin-left:auto;
     margin-right: auto;
 }
 #content{
+
+    text-align: center;
+    vertical-align: middle;
+    border: solid;
     width: 500px;
     margin-left: auto;
     margin-right: auto;
+
 }
 #userName{
-    width:100%;
+    width:auto;
     margin-top:5px;
     margin-bottom:5px;
+    border-radius: 10px;
 }
 #password{
-    width:100%;
+    width:auto;
     margin-top:5px;
     margin-bottom:5px;
+    border-radius: 10px;
 }
 #email{
     width:100%;
