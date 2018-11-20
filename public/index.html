@@ -288,9 +288,13 @@
                     body:JSON.stringify({
                         tittel:tittel,
                         innhold:innhold,
+                        user:authenticatedUser,
+                        token:authenticationToken
+                        
                     }),
                     headers: {
                         "Content-Type": "application/json; charset=utf-8"
+                        
                     },
 
                 }).then(function(data){

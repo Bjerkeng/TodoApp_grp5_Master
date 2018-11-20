@@ -113,14 +113,14 @@ ourServer.get("/app/authenticate", async function (req, res, next) {
             log(user);
             let token = jwt.sign({
                 id: user.id,
-                username: user.name
+                username: user.username
             }, SUPER_SECRET_KEY); // Create token 
 
             res.status(200).send({
                 auth: token,
                 user: {
                     id: user.id,
-                    name: user.name
+                    name: user.username
                 }
             }).end(); // Send token and authenticated user to client.
 
