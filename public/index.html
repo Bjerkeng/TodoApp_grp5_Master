@@ -297,11 +297,11 @@
                     if(data.status < 400){
                         return data.json();
                     }
-                }).then(function(createdPost){
+                })/*.then(function(createdPost){
                     if(createdPost.id){
                         console.log("Posten er lagt til i DB")
                     }
-                }).catch(err =>{
+                })*/.catch(err =>{
                 console.error(err);
             });
         }
