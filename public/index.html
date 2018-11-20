@@ -273,7 +273,7 @@
     /////////////////////////////////////////////////////////////////////////////////////////////////////
 
     function displayCreateTaskForm(){
-        //clearContainer();
+        clearScreen();
         let createTaskForm =  createElementFromTemplate("#createTaskTemplate");
         document.getElementById("content").appendChild(createTaskForm);
         submitTask.onclick = function (evt) {
