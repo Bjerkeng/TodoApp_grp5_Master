@@ -97,12 +97,18 @@ ourServer.get("/app/authenticate", async function (req, res, next) {
         let username = credentials[0].trim();
         let password = credentials[1].trim();
 
-        let user = await db.select(`SELECT * from users WHERE username='${username}' and hash='${password}'`) ///databaseQuery(username, password) // if the username and password are correct we will get a user object in return at this point.
-
+        let user = null;
+        try{
+            user =  await databaseQuery(username, password); ///databaseQuery(username, password) // if the username and password are correct we will get a user object in return at this point.
+        }catch(err){
+            console.log(err);
+        }
+        
         if (user) {
             // There was a user in the database with the correct username and password
             // This is where we are diverging from the basic authentication standard. by creating a token for the client to use in all later corespondanse. 
             log("User is authenticated");
+            log(user);
             let token = jwt.sign({
                 id: user.id,
                 username: user.name
@@ -126,41 +132,19 @@ ourServer.get("/app/authenticate", async function (req, res, next) {
 
 async function databaseQuery(username, password) {
 
-    // This function is a dummy function doing an aproximation of what the database interaction would be. 
-
-    const userDatabase = [{
-            id: 100,
-            name: "Vic",
-            pswHash: "$2b$10$WOJeVBmVk9LzWSDJWIx.SO4z1bplwcOPib62VHda0.lG0dIJO7zPy" //12345678
-        },
-        {
-            id: 101,
-            name: "Dole",
-            pswHash: "$2b$10$l5pycOljEtHE/8hr99YEsuIUBVOzXdY0FSdeLFLVtutg6Pnl9Q6cq"
-        },
-        {
-            id: 102,
-            name: "Doffen",
-            pswHash: "$2b$10$gUGSms21rg4yQOUYanUnfeVsis1nyUuBaiWlMoQBsgn5Rf4kXS7Te"
-        },
-    ];    
-
-    // 1. Find a user with the correct username 
-    let foundUser = userDatabase.find(user => {
-        return (user.name.toLowerCase() === username.toLowerCase());
-    })
+    let user = await db.select(`SELECT * from users WHERE username='${username}'`);
 
     // 2. If we found a user, check the password. 
-    if (foundUser) {
-        console.log("fant bruker");
-        const isCorrect = await bcrypt.compare(password, foundUser.pswHash); // We use bcrypt to compare the hash in the db with the password we recived. 
+    if (user && user.length === 1) {
+        user = user[0];
+        const isCorrect = await bcrypt.compare(password, user.hash); // We use bcrypt to compare the hash in the db with the password we recived. 
         // 3. if the password is correct the userobject is parsed on
         if (!isCorrect) {
-            foundUser = null;
+            user = null;
         }
     }
 
-    return Promise.resolve(foundUser);
+    return Promise.resolve(user);
 }
 
 // this function is used as a midelware for endpoints that requier access token (auth user)

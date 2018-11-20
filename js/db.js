@@ -17,7 +17,7 @@ async function runQuery(query) {
 
         //wait until promise complete
         let res = await client.query(query).then(function (res) {
-            console.log(res);
+            //console.log(res);
             //(Here you can manipulate response)
             return res;
         }).catch(function (err) {

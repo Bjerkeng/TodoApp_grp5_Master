@@ -14,21 +14,26 @@ router.get('/app/user', function(req,res,next){
     }
 });
 
-
 router.post('/app/user',async function(req,res,next){
   
-    let userEmail = req.body.email;
-    let userName = req.body.name;
-    let passwordHash = req.body.pswHash;
-    let userRole = req.body.userRole;
-    
-     let query = `INSERT INTO "public"."users"("email", "username", "hash", "role") 
+    var bcrypt = require('bcrypt');
+    bcrypt.genSalt(10, async function(err, salt) {
+        bcrypt.hash(req.body.pswHash, salt, async function(err, hash) {
+            let userEmail = req.body.email;
+            let userName = req.body.name;
+            let passwordHash = hash;
+            let userRole = req.body.userRole;
+            
+        
+let query = `INSERT INTO "public"."users"("email", "username", "hash", "role") 
         VALUES('${userEmail}', '${userName}', '${passwordHash}', ${userRole}) RETURNING "id", "email", "username", "hash", "role"`;
     
     console.log(query);
     
     let code = await db.insert(query) ? 200:500;
-    res.status(code).json({}).end();
+    res.status(code).json({}).end()
+        });
+    });
 })
 
 router.get('/app/user/:userName', function(req,res,next){
