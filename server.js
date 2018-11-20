@@ -13,6 +13,7 @@ const que = require("./js/requestQue.js") // Module for the que of questions / r
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const db = require('./js/db.js')
+const list = requir('./js/list.js')
 
 const SUPER_SECRET_KEY = process.env.TOKEN_KEY || "TransparantWindowsFlyingDonkeys"; // for use with web token.
 const DEBUG = true;
@@ -24,6 +25,7 @@ ourServer.use(bodyParser.json());
 
 ourServer.use(user);
 ourServer.use(que);
+ourServer.use(list);
 
 ourServer.use(function(err, req, res, next) {
     console.error(err.stack);
