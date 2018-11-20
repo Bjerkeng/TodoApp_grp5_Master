@@ -266,7 +266,7 @@
                 let password = document.getElementById("password").value;
                 let email = document.getElementById("email").value;
                 let role = USER_ROLE;
-
+                
                 fetch('/app/user',{
                     method:"POST",
                     body:JSON.stringify({
