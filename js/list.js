@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var db = require("./db.js")
 
-router.get('/app/posts', async function(req, res, next){
+router.post('/app/posts', async function(req, res, next){
    // let query = "";
     let tittel = req.body.tittel;
     let innhold = req.body.innhold;
