@@ -67,13 +67,20 @@
     <template id="createTaskTemplate">
         
         <form id="createTaskForm">
-            <label for="task"></label> 
+            <label for="tittel"></label>
             <input type="text" id="tittel"><br>
 
-            <label for="description"></label> 
+            <label for="innhold"></label>
             <input type="text" id="innhold"><br>
             
             <button type="button" id="submitTask">Submit</button>
+
+            <select id='kategorier' text="kategorier">
+                <option value='1'>Handleliste</option>
+                <option value='2'>Huskeliste</option>
+                <option value='3'>Juleliste</option>
+            </select>
+            <button type="button" onclick="showList()">Vis Liste</button>
         </form>
     </template>
     
