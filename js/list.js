@@ -26,6 +26,5 @@ router.post('/app/posts', async function(req, res, next){
 
 
 
-
 const list = {}
 module.exports = router;
