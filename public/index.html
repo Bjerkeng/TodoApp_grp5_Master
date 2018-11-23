@@ -59,7 +59,7 @@
             <label for="password">Password:</label><br/>
             <input type="password" id="password"><br/>
 
-            <button>Create</button>
+            <button type="button" id="createNewUserBt">Create</button>
         </form>
 
     </template>
@@ -275,6 +275,10 @@
                 console.error(err);
             });
             }
+             createNewUserBt.onclick = function(evt){
+            clearScreen();
+            displayLoginForm();
+            console.log("createNewUserBt klikk")
     }
     
     /////////////////////////////////////////////////////////////////////////////////////////////////////
