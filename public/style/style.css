@@ -1,12 +1,21 @@
 body{
     margin: 0px;
+    background-color: lightskyblue;
 }
 
-h1{
+h1 {
     font-family: 'Lato', sans-serif;
     font-size: 26px;
     text-transform: uppercase;
     text-align: center;
+    color: white;
+}
+
+h2 {
+    font-size: 22px;
+    text-transform: uppercase;
+    font-family: "Lato", sans-serif;
+    color: #27385f;
 }
 
 h3{
@@ -15,6 +24,14 @@ h3{
     font-size: 20px;
     text-align: center;
     color: white;
+}
+
+h4 {
+    font-size: 12px;
+    font-family: "open-sans", sans-serif;
+    font-weight: 100!important;
+    color: #527ca0;
+    margin-top: -15px;
 }
 
 
@@ -31,14 +48,25 @@ form {
 }
 
 
+#liste {
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background-color: white;
+    padding-left: 25px;
+    padding-right: 25px;
+    vertical-align: bottom;
+    width: 30%;
+}
+
 #container{
     max-width: 100%;
     margin-left:auto;
     margin-right: auto;
 
-    width: 400px;
-    height: 50px;
-    padding: 20px;
+
 
 
 }
@@ -47,10 +75,15 @@ form {
     margin-left:auto;
     margin-right: auto;
 
+
+
+
+
 }
 
 
 #content{
+
 
     text-align: center;
     vertical-align: center;
@@ -61,6 +94,7 @@ form {
 
 
 }
+
 
 #userName{
 
@@ -167,6 +201,11 @@ button:hover {
     font-family: "Lato", sans-serif;
 }
 
+
+#btn-top:focus {
+    outline: none!important;
+}
+
 *[hidden]{
     display: none;
 }
@@ -180,5 +219,107 @@ button:hover {
     border-radius: 4px;
     background-color: #f8f8f8;
     resize: none;
+}
+
+#divTaskForm {
+
+    display: inline-block;
+
+
+    padding: 5px;
+
+    background-color: gainsboro;
+
+    vertical-align: top;
+
+
+    width: 40%;
+
+    border-radius: 4px;
+
+
+}
+
+#divPostForm {
+
+    display: inline-block;
+
+
+    padding: 5px;
+
+    background-color: gainsboro;
+
+    vertical-align: top;
+
+    width: 40%;
+
+    border-radius: 4px;
+
+
+
+}
+
+#overskrift {
+
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+}
+
+#postinnhold {
+
+
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+
+
+}
+
+#tittel {
+
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+
+}
+
+#innhold {
+
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+
+}
+
+#kategorier{
+
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+
+    background-color: pink;
+
+
 }
 

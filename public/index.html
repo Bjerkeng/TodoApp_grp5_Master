@@ -75,11 +75,12 @@
     <template id="createTaskTemplate">
         <div id="divTaskForm">
         <form id="createTaskForm">
-            <label for="task">Liste-Tittel</label> 
-            <input type="text" id="tittel"><br>
+            <h3>Create new list</h3>
+            <label for="task"></label>
+            <input type="text" id="tittel" placeholder="Liste-Tittel"><br>
 
-            <label for="description">Liste-Beskrivelse</label> 
-            <input type="text" id="innhold"><br>
+            <label for="description"></label>
+            <input type="text" id="innhold" placeholder="Liste-Beskrivelse"><br>
             
             <button type="button" id="submitTask">Submit</button>
         </form>
@@ -87,13 +88,14 @@
         
         <div id="divPostForm">
         <form id="createPostForm">
-            <label for="task">Overskrift</label> 
-            <input type="text" id="overskrift"><br>
-            <select id="kategorier" onchange="kategoriValg()"></select>
-            <label for="description">Innhold</label> 
-            <textarea name="textarea" id="postinnhold" style="width:250px;height:150px;"></textarea>
+            <h3>Create new task</h3>
+            <label for="task"></label>
+            <input type="text" id="overskrift" placeholder="Overskrift"><br>
+            <label for="description"></label>
+            <textarea name="textarea" id="postinnhold" placeholder="Innhold"></textarea>
             <br>
             <button type="button" id="submitPost">Submit</button>
+            <select id="kategorier" onchange="kategoriValg()"></select>
         </form>
         </div>
     <h1>Lister</h1>
