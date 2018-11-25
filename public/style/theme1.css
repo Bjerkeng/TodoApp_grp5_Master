@@ -8,10 +8,22 @@ h1 {
     color: sandybrown;
 }
 
-form {
+h3 {
+
+    color: sandybrown;
+}
+
+
+#form {
 
     color: darkgoldenrod;
 }
+
+#content {
+
+    background-color: olivedrab;
+}
+
 
 input {
     border: none;
