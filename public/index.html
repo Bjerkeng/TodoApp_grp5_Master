@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+​<!DOCTYPE html>
 <html>
 <head>
     <link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
@@ -59,29 +59,38 @@
             <label for="password">Password:</label><br/>
             <input type="password" id="password"><br/>
 
-            <button type="button" id="createNewUserBt">Create</button>
+            <button>Create</button>
         </form>
 
     </template>
 
     <template id="createTaskTemplate">
-        
+        <div id="divTaskForm">
         <form id="createTaskForm">
-            <label for="task" placeholder="Overskrift"></label> 
+            <label for="task">Liste-Tittel</label> 
             <input type="text" id="tittel"><br>
 
-            <label for="description" placeholder="Tekst"></label> 
+            <label for="description">Liste-Beskrivelse</label> 
             <input type="text" id="innhold"><br>
             
             <button type="button" id="submitTask">Submit</button>
-            
-            <select id="kategorier">
-                 <option value= "1">Handleliste</option>
-                 <option value= "2">Juleliste</option>
-                 <option value= "3">Huskeliste</option>
-            </select>
-                <button type = "button" onclick="showList()">Vis lister</button>
         </form>
+        </div>
+        
+        <div id="divPostForm">
+        <form id="createPostForm">
+            <label for="task">Overskrift</label> 
+            <input type="text" id="overskrift"><br>
+            <select id="kategorier" onchange="kategoriValg()"></select>
+            <label for="description">Innhold</label> 
+            <textarea name="textarea" id="postinnhold" style="width:250px;height:150px;"></textarea>
+            <br>
+            <button type="button" id="submitPost">Submit</button>
+        </form>
+        </div>
+    <h1>Lister</h1>
+    <div id="lister">           
+    </div>
     </template>
     
 </div>
@@ -96,6 +105,10 @@
     let authenticatedUser = null;
     var authenticationToken = null;
     const DEBUG = true;
+    let listeid;
+    
+    ////////////////////////////////////////////////////////////
+    //Templates
     
     (function(){
        if(!authenticatedUser){
@@ -116,50 +129,13 @@
                 container.removeChild(container.firstChild);
             }
     }
-    
     function createElementFromTemplate(templateID){
         let template = document.querySelector(templateID);
         template = document.importNode(template.content, true);
         return template;
     }
     
-    function authenticateUser(username, password) {
-            log("Starting authentication request", `Username ${username}`, `Password ${password}`);
-            // We are going to base our authentication on basic authentication. This is a authentication scheme suported by http (RFC 7617)
-            // Read more about it at https://en.wikipedia.org/wiki/Basic_access_authentication and https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme
-            let credentials = `Basic ${ btoa(username + ":" + password)}`; // This creates a string that looks similar to  "Basic KL9zxHppU2VCX". btoa is a function of the window object.
-            let request = {
-                method: "GET",
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                    'Authorization': credentials
-                }
-            }
-            fetch("/app/authenticate", request).then(function (respons) {
-                if (respons.status < 400) {
-                    // OK we are authenticated.
-                    return respons.json(); // Grab the JSON payload. 
-                } else if (respons.status === 401) {
-                    // Username or password was wrong, informe the user.
-                    return Promise.reject(new Error("Wrong username or password"));
-                } else {
-                    // Some other thing went wrong.
-                    return Promise.reject(new Error("Could not log you in at this time, try again later"));
-                }
-            }).then(function (responsJSON) {
-                authenticationToken = responsJSON.auth; // Because this is where the server puts the token.
-                authenticatedUser = responsJSON.user; // Information about the user. 
-
-                displayCreateTaskForm();
-
-            }).catch(function (err) {
-                // fetch could not complete the request.
-                displayError(err.message);
-            });
-        }
-    
-     function fetchQuote() {
+    /* function fetchQuote() {
             let request = {
                 method: "GET",
                 headers: {
@@ -179,9 +155,8 @@
             }).catch(function (err) {
                 displayError(err.message);
             });
-        }
-    
-    /////////////////////////////////////////////////////////////////////////////////////////////////////
+        } */ 
+    ////////////////////////////////////////////////////////////
     
     function displayLoginForm(){
         let loginForm = createElementFromTemplate("#authenticateUserUITemplate")
@@ -231,9 +206,45 @@
             displayCreateUserForm();
             console.log("Create user bt clicked")
         }
-    }
+    } //Logge inn
     
-    /////////////////////////////////////////////////////////////////////////////////////////////////////
+    function authenticateUser(username, password) {
+            log("Starting authentication request", `Username ${username}`, `Password ${password}`);
+            // We are going to base our authentication on basic authentication. This is a authentication scheme suported by http (RFC 7617)
+            // Read more about it at https://en.wikipedia.org/wiki/Basic_access_authentication and https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme
+            let credentials = `Basic ${btoa(username + ":" + password)}`; // This creates a string that looks similar to  "Basic KL9zxHppU2VCX". btoa is a function of the window object.
+            let request = {
+                method: "GET",
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'Authorization': credentials
+                }
+            }
+            fetch("/app/authenticate", request).then(function (respons) {
+                if (respons.status < 400) {
+                    // OK we are authenticated.
+                    return respons.json(); // Grab the JSON payload. 
+                } else if (respons.status === 401) {
+                    // Username or password was wrong, informe the user.
+                    return Promise.reject(new Error("Wrong username or password"));
+                } else {
+                    // Some other thing went wrong.
+                    return Promise.reject(new Error("Could not log you in at this time, try again later"));
+                }
+            }).then(function (responsJSON) {
+                authenticationToken = responsJSON.auth; // Because this is where the server puts the token.
+                authenticatedUser = responsJSON.user; // Information about the user. 
+
+                displayUserListView();
+
+            }).catch(function (err) {
+                // fetch could not complete the request.
+                displayError(err.message);
+            });
+        } //Auth
+    
+    ////////////////////////////////////////////////////////////
     
     function displayCreateUserForm(){
         let element =  createElementFromTemplate("#createUserUITemplate");
@@ -265,7 +276,7 @@
                         return data.json();
                     }
                 }).then(function(createdUser){
-                    if(createdUser.id){
+                    if(createdUser){
                         //We have a newly created user!!
                         clearScreen();
                         displayLoginForm();
@@ -275,16 +286,16 @@
                 console.error(err);
             });
             }
-            createNewUserBt.onclick = function(evt){
-            clearScreen();
-            displayLoginForm();
-            console.log("createNewUserBt klikk")
-      }      
-    }
+            /*createNewUserBt.onclick = function(evt){
+                clearScreen();
+                displayLoginForm();
+                console.log("createNewUserBt klikk")
+            }  */     
+    } //Lage Bruker
     
-    /////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////
 
-    function displayCreateTaskForm(){
+    function displayUserListView(){
         clearScreen();
         let createTaskForm =  createElementFromTemplate("#createTaskTemplate");
         document.getElementById("content").appendChild(createTaskForm);
@@ -295,7 +306,7 @@
                 let innhold = document.getElementById("innhold").value;
                 let dueDate = "";
                 
-                fetch('/app/posts',{
+                fetch('/app/list',{
                     method:"POST",
                     body:JSON.stringify({
                         tittel:tittel,
@@ -313,38 +324,152 @@
                     if(data.status < 400){
                         return data.json();
                     }
-                })/*.then(function(createdPost){
-                    if(createdPost.id){
-                        console.log("Posten er lagt til i DB")
+                }).then(function(listoflists2){
+                    displayExistingLists(); //Oppdaterer listen med lister når man lager ny liste
+                    console.log(listoflists2);
+                }).catch(err =>{
+                console.error(err);
+            });
+        }
+        submitPost.onclick = function (evt) {
+                //evt.preventDefault();
+
+                let overskrift = document.getElementById("overskrift").value;
+                let postinnhold = document.getElementById("postinnhold").value;
+                let liste = document.getElementById("kategorier").value;
+                let dueDate = "";
+                
+                fetch('/app/list/posts',{
+                    method:"POST",
+                    body:JSON.stringify({
+                        overskrift:overskrift,
+                        postinnhold:postinnhold,
+                        user:authenticatedUser,
+                        token:authenticationToken,
+                        listeid:listeid
+                    }),
+                    headers: {
+                        "Content-Type": "application/json; charset=utf-8"
+                        
+                    },
+
+                }).then(function(data){
+                    if(data.status < 400){
+                        return data.json();
                     }
-                })*/.catch(err =>{
+                }).then(function(listoflists2){
+                    displayExistingLists(); //Oppdaterer listen med lister når man lager ny liste
+                    displayExistingPosts();
+                    console.log(listoflists2);
+                }).catch(err =>{
                 console.error(err);
             });
         }
         addElement(createTaskForm);
+        displayExistingLists();
+        displayExistingPosts();
+    } //Lage lister og poster
+    
+     ////////////////////////////////////////////////////////////
+    
+    function displayExistingLists(){
+     fetch('/app/lists?token=' + authenticatedUser.id,{
+                    method:"GET",
+                    headers: {
+                        "Content-Type": "application/json; charset=utf-8"
+                    },
 
+                }).then(function(data){
+                    if(data.status < 400){
+                        return data.json();
+                    }
+                }).then(function(json){
+                    
+                    console.log(json);
+                    showList(json);
+                }).catch(err =>{
+                    console.error(err);
+                });    
+    } //Vise Lister fetch
+    
+    function displayExistingPosts(){
+        fetch('/app/posts?token=' + authenticatedUser.id,{
+                    method:"GET",
+                    headers: {
+                        "Content-Type": "application/json; charset=utf-8"
+                    },
+
+                }).then(function(data){
+                    if(data.status < 400){
+                        return data.json();
+                    }
+                }).then(function(poster){
+                    console.log(poster);
+                    showPosts(poster);
+                }).catch(err =>{
+                    console.error(err);
+                });
     }
-
-    function displaySubmitRequestForm(){
+    //Kanskje kjøre queData, postData??
+    function showList(queData){
+        var liste = document.getElementById("lister")
+        liste.innerHTML = "";
+        for(i = 0; i < queData.length; i++){
+            /*
+            if(queData[i].id == postData.listid){
+                post += postData.overskrift + postData.innhold
+            }*/
+            
+            console.log(queData[i]);
+            liste.innerHTML += 
+            `<div id="liste" class="liClass-` + i + `">` + 
+            "<h2>" + queData[i].title + "</h2>" +
+            "<h4>" + queData[i].description + "</h4>" +
+            
+            "</div>"
+;
+        }
         
+        //Create and append the options
+        for (var i = 0; i < queData.length; i++) {
+            var option = document.createElement("option");
+            option.value = queData[i].id;
+            option.text = queData[i].title;
+            kategorier.options.add(option);
+        }
+        
+    } // Vise Lister
+    
+    
+    
+/////////////////////////////////////////////////////////////////
+    
+    function showPosts(postData){
+            console.log(postData);
+            for (var ix = 0; ix < postData.length; ix++) {
+                console.log(postData[ix]);
+            }
+        }
+    
+    function kategoriValg(){
+        console.log("valg funker");
+        let valg = document.getElementById("kategorier").value;
+        console.log(valg);
+        listeid = valg;
+        
+        //var listeid = document.getElementsByTagName("option")[valg].value;
+       //console.log(listeid);
     }
-
+    
     function displayError(msg) {
             let errView = document.getElementById("errorView");
             errView.removeAttribute("hidden");
             errView.querySelector("#msg").textContent = msg;
         }
-        function hideError() {
-            let errView = document.getElementById("errorView");
-            errView.setAttribute("hidden", true);
-        }
-/*    function clearContainer() {
-            let container = document.getElementById("content");
-            while (container.firstChild) {
-                container.removeChild(container.firstChild);
-            }
-        }*/
-    
+    function hideError() {
+        let errView = document.getElementById("errorView");
+        errView.setAttribute("hidden", true);
+    }
     function log(...messages) {
             if (DEBUG) {
                 messages.forEach(msg => {
@@ -352,11 +477,14 @@
                 })
             }
         }
-        function changeStyle(path){
-            document.getElementById("style").setAttribute("href", path);
-            
-        }
     
+/////////////////////////////////////////////////////////////////
+    
+    function changeStyle(path){
+        document.getElementById("style").setAttribute("href", path);  
+    }   //Stylesheet
+    
+/////////////////////////////////////////////////////////////////
 </script>
 
 </body>
