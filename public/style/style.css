@@ -140,11 +140,13 @@ button:hover {
 
 
 }
-#footer{
-
-    width: 90%;
-    position: sticky;
+#footer {
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
     top: 0;
+    background-color: white;
+    height: 50px;
 }
 
 footer.button, [type="button"]{
