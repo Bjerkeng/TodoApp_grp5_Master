@@ -100,11 +100,11 @@ ourServer.get("/app/authenticate", async function (req, res, next) {
         let password = credentials[1].trim();
 
         let user = null;
-        try{
+        //try{
             user =  await databaseQuery(username, password); ///databaseQuery(username, password) // if the username and password are correct we will get a user object in return at this point.
-        }catch(err){
-            console.log(err);
-        }
+        //}catch(err){
+        //    console.log(err);
+        //}
         
         if (user) {
             // There was a user in the database with the correct username and password
