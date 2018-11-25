@@ -1,10 +1,46 @@
 body {
 
     background-color: coral;
-
 }
 
 h1{
 
     color: pink;
 }
+
+h3 {
+
+    color: crimson;
+}
+
+#content {
+
+    background-color: yellow;
+    box-shadow: 7px 10px;
+    border: 1px solid;
+
+}
+
+#loginBt{
+
+    width: 100%;
+    background-color: pink;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#createUserBt {
+    width: 100%;
+    background-color: lightskyblue;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
