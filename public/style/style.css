@@ -90,8 +90,6 @@ form {
     margin-top: 50px;
 
 
-
-
 }
 
 
@@ -113,7 +111,6 @@ form {
 
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -122,7 +119,6 @@ form {
 #email{
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -133,11 +129,12 @@ form {
 #loginBt{
 
     width: 100%;
-    background-color: steelblue;
+    background-color: #729afe;
     color: white;
     padding: 14px 20px;
     border: none;
     border-radius: 4px;
+    margin-top: 20px;
 
     cursor: pointer;
 }
@@ -146,10 +143,25 @@ button:hover {
     opacity: 0.8;
 }
 
+.createUserBt {
+
+    width: 100%;
+    background-color: #729afe;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+
+    margin-top: 20px;
+
+    cursor: pointer;
+
+}
+
 
 #createUserBt {
     width: 100%;
-    background-color: steelblue;
+    background-color: #729afe;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -224,21 +236,25 @@ button:hover {
     resize: none;
 }
 
+
+
 #divTaskForm {
 
     display: inline-block;
-
-
     padding: 5px;
-
     background-color: gainsboro;
-
     vertical-align: top;
 
 
     width: 40%;
+    margin-right: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 255px;
 
-    border-radius: 4px;
 
 
 }
@@ -246,17 +262,19 @@ button:hover {
 #divPostForm {
 
     display: inline-block;
-
-
     padding: 5px;
-
     background-color: gainsboro;
-
     vertical-align: top;
 
     width: 40%;
+    margin-left: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 255px;
 
-    border-radius: 4px;
 
 
 
@@ -321,7 +339,7 @@ button:hover {
     box-sizing: border-box;
     font-size: 16px;
 
-    background-color: pink;
+
 
 
 }
