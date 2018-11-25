@@ -30,6 +30,7 @@
     </template>
 
     <template id="authenticateUserUITemplate">
+        <div id="login-form">
         <form>
             <label for="userName"></label><br/>
             <input type="text" id="userName" placeholder="Username"><br/>
@@ -51,9 +52,11 @@
                 <p id="msg"></p>
             </div>
         </div>
+        </div>
     </template>
 
     <template id="createUserUITemplate">
+        <div id="login-form">
         <form id="createUserForm">
             <label for="userName"></label><br/>
             <input type="text" id="userName" placeholder="Username"><br/>
@@ -66,7 +69,7 @@
             
             <button>Create</button>
         </form>
-
+        </div>
     </template>
 
     <template id="createTaskTemplate">
