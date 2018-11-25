@@ -10,6 +10,11 @@
     </head>
 <body>
 <div id="theme">
+    <div id="footer">
+        <button id="defaultStyle" type="button" name ="defaultTheme" onclick="changeStyle('style/style.css')">Default</button>
+        <button id="stylesheet1" type="button" name="darkTheme" onclick="changeStyle('style/theme1.css')">Dark</button>
+        <button id="stylesheet2" type="button" name="colorTheme" onclick="changeStyle('style/theme2.css')">Color</button>
+    </div>
 <div id="container">
 <div id="header">
 <h1>ToDo Applikasjonen</h1>
@@ -26,11 +31,11 @@
 
     <template id="authenticateUserUITemplate">
         <form>
-            <label for="userName">Username:</label><br/>
-            <input type="text" id="userName"><br/>
+            <label for="userName"></label><br/>
+            <input type="text" id="userName" placeholder="Username"><br/>
 
-            <label for="password">Password:</label><br/>
-            <input type="password" id="password"><br/>
+            <label for="password"></label><br/>
+            <input type="password" id="password" placeholder="Password"><br/>
 
             <label for="rememberMe">Remember Me:</label>
             <input type="checkbox" id="rememberMe"><br/>
@@ -50,15 +55,15 @@
 
     <template id="createUserUITemplate">
         <form id="createUserForm">
-            <label for="userName">Username:</label><br/>
-            <input type="text" id="userName"><br/>
+            <label for="userName"></label><br/>
+            <input type="text" id="userName" placeholder="Username"><br/>
 
-            <label for="email">E-mail:</label><br/>
-            <input type="email" id="email"><br/>
+            <label for="email"></label><br/>
+            <input type="email" id="email" placeholder="Email"><br/>
 
             <label for="password">Password:</label><br/>
-            <input type="password" id="password"><br/>
-
+            <input type="password" id="password" placeholder="Password"><br/>
+            
             <button>Create</button>
         </form>
 
@@ -93,11 +98,6 @@
     </div>
     </template>
     
-</div>
-<div id="footer">
-    <button id="defaultStyle" type="button" name ="defaultTheme" onclick="changeStyle('style/style.css')">Default</button>
-    <button id="stylesheet1" type="button" name="darkTheme" onclick="changeStyle('style/theme1.css')">Dark</button>
-    <button id="stylesheet2" type="button" name="colorTheme" onclick="changeStyle('style/theme2.css')">Color</button>
 </div>
 </div>
 <script>
