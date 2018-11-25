@@ -5,44 +5,130 @@ h1{
     text-align: center;
 }
 
+h3{
+
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+}
+
+
+
+form {
+
+    width: 300px;
+    height: 500px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+
+
+}
+
+
 #container{
     max-width: 100%;
     margin-left:auto;
     margin-right: auto;
+
+    width: 400px;
+    height: 50px;
+    padding: 20px;
+
+
 }
 #header{
     width: auto;
     margin-left:auto;
     margin-right: auto;
+
 }
+
+
 #content{
 
     text-align: center;
-    vertical-align: middle;
-    border: solid;
-    width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+    vertical-align: center;
+
+    border: 3px solid #f1f1f1;
+    background-color: lightskyblue;
+
+
 
 }
+
 #userName{
-    width:auto;
-    margin-top:5px;
-    margin-bottom:5px;
-    border-radius: 10px;
+
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 #password{
-    width:auto;
-    margin-top:5px;
-    margin-bottom:5px;
-    border-radius: 10px;
+
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 #email{
-    width:auto;
-    margin-top:5px;
-    margin-bottom:5px;
-    border-radius: 10px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
+
+
+#loginBt{
+
+    width: 100%;
+    background-color: steelblue;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+
+#createUserBt {
+    width: 100%;
+    background-color: steelblue;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+
+    cursor: pointer;
+}
+
+#createNewUser {
+    width: 100%;
+    background-color: steelblue;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
 #rememberMe{
     margin-top: 5px;
     margin-bottom: 15px;
@@ -51,16 +137,36 @@ h1{
     
     height:100%;
     width:100%;
+
+
 }
 #footer{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;   
-    position:absolute;
-    bottom:0;
+
+    width: 90%;
+    position: sticky;
+    top: 0;
+}
+
+footer.button, [type="button"]{
+    background-color: lightskyblue;
+    color: black;
+    cursor: pointer;
+    float: right;
+
 }
 
 *[hidden]{
     display: none;
 }
+
+#description {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
