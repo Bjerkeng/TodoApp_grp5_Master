@@ -37,7 +37,7 @@ h2 {
     font-size: 22px;
     text-transform: uppercase;
     font-family: "Lato", sans-serif;
-    color: #27385f;
+    color: #ff668c;
 }
 
 h3{
@@ -52,7 +52,7 @@ h4 {
     font-size: 12px;
     font-family: "open-sans", sans-serif;
     font-weight: 100!important;
-    color: #527ca0;
+    color: rgba(140, 58, 78, 0.69);
     margin-top: -15px;
 }
 
@@ -130,7 +130,7 @@ form {
 
 #loginBt{
     width: 100%;
-    background-color: #f78577;
+    background-color: #ff668c;
     color: white;
     padding: 14px 20px;
     border: none;
@@ -145,7 +145,7 @@ button:hover {
 
 .createUserBt {
     width: 100%;
-    background-color: #f78577;
+    background-color: #ff668c;
     color: white;
     padding: 14px 20px;
     border: none;
@@ -157,7 +157,7 @@ button:hover {
 
 #createUserBt{
     width: 100%;
-    background-color: #f78577;
+    background-color: #ff668c;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -169,7 +169,7 @@ button:hover {
 
 #createNewUser {
     width: 100%;
-    background-color: #f78577;
+    background-color: #ff668c;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -358,7 +358,7 @@ button:hover {
 #submitPost{
     float:left;
     width: 25%;
-    background-color: #f78577;
+    background-color: #ff668c;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -369,7 +369,7 @@ button:hover {
 #submitTask{
     float:left;
     width: 25%;
-    background-color: #f78577;
+    background-color: #ff668c;
     color: white;
     padding: 14px 20px;
     margin-top: 90px;
