@@ -363,7 +363,7 @@ button:hover {
     float: left;
     width: 115%;
     height: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-rendering: auto;
     color: #a2a2a2;
     font: 400 13.3333px Arial;
@@ -393,13 +393,37 @@ button:hover {
     border-radius: 4px;
     cursor: pointer;
 }
-#submitTask, #submitOppdaterTask, #submitOppdaterPost{
+#submitTask, , {
     float:left;
     width: 25%;
     background-color: rgba(255, 255, 255, 0.04);
     color: #05eee8;
     padding: 14px 20px;
     margin-top: 125px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#submitOppdaterPost{
+    float:left;
+    width: 25%;
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #05eee8;
+    padding: 14px 20px;
+    margin-top: 7px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#submitOppdaterTask{
+    float:left;
+    width: 25%;
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #05eee8;
+    padding: 14px 20px;
+    margin-top: 60px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
