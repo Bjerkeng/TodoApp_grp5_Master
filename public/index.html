@@ -349,16 +349,17 @@
                         return data.json();
                     }
                 }).then(function(listoflists2){
-                    displayExistingLists(); //Oppdaterer listen med lister når man lager ny liste
                     displayExistingPosts();
+                    displayExistingLists(); //Oppdaterer listen med lister når man lager ny liste
                     console.log(listoflists2);
                 }).catch(err =>{
                 console.error(err);
             });
         }
         addElement(createTaskForm);
-        displayExistingLists();
         displayExistingPosts();
+        displayExistingLists();
+        
     } //Lage lister og poster
     
      ////////////////////////////////////////////////////////////
