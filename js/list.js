@@ -84,6 +84,25 @@ router.post("/app/list/update", async function(req,res,next){
     
 });
 
+router.post("/app/post/update", async function(req,res,next){
+
+    let updatePostId = req.body.updatePostId;
+    let oppdaterOverskrift = req.body.oppdaterOverskrift;
+    let oppdaterInnhold = req.body.oppdaterPostInnhold;
+
+    let query = `UPDATE posts SET tittel = '${oppdaterOverskrift}', innhold = '${oppdaterPostInnhold}' WHERE postid = '${updatePostId}'`;
+    
+    console.log(query);
+
+    let post = await db.update(query) 
+    if(post){
+    res.status(200).json(JSON.stringify(post)).end()
+        }else{
+            res.status(500).end()
+        }
+    
+});
+
 router.post('/app/list/posts', async function(req, res, next){
    // let query = "";
     let overskrift = req.body.overskrift;
