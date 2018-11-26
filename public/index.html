@@ -452,9 +452,9 @@
                         return data.json();
                     }
                 }).then(function(existingposts){
-                    displayExistingPosts();
+                    clearScreen();
+                    displayUserListView();
                     //displayExistingLists(); //Oppdaterer listen med lister når man lager ny liste
-                    console.log(listoflists2);
                 }).catch(err =>{
                 console.error(err);
             });
