@@ -278,7 +278,9 @@
                 authenticatedUser = responsJSON.user; // Information about the user. 
               
                 //Om autentisering har gått bra - Viser listesiden
+                if(authenticationToken){
                 displayUserListView();
+                }
             }).catch(function (err) {
                 // fetch could not complete the request.
                 displayError(err.message);
