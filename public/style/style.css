@@ -1,7 +1,10 @@
 html, body{
     min-height: 100%;
+}
+
+body{
     margin: 0px;
-    background: linear-gradient(36deg, #21D4FD 25% , #D621FF 80%);
+    background: linear-gradient(36deg, #21D4FD 25% , #D621FF 80%);    
 }
 
 h1 {
