@@ -92,7 +92,7 @@
         
         <div id="divPostForm">
         <form id="createPostForm">
-            <h3>Legg til innhold</h3>
+            <h3>Lag Posts til din liste</h3>
             <p>Her kan du fylle inn valgte liste med innhold</p>
             <label for="task"></label>
             <input type="text" id="overskrift" placeholder="Overskrift"><br>
@@ -156,6 +156,7 @@
     let postDataInnhold;
     let postDataInnholdPost;
     let deleteListId;
+    let postDataDeleteId;
     let updateListId;
     
     ////////////////////////////////////////////////////////////
@@ -473,7 +474,9 @@
                     option.text = queData[i].title + " // " + postDataInnhold[ix].tittel;
                     kategorierPost.add(option);
                     
-                    postDataInnholdPost += "<h5>" + postDataInnhold[ix].tittel + "</h5><br><p>" + postDataInnhold[ix].innhold + "</p>";
+                    postDataDeleteId = postDataInnhold[ix].postid;
+                    
+                    postDataInnholdPost += `<div id="post">` + "<h5>" + postDataInnhold[ix].tittel + "</h5><br><p>" + postDataInnhold[ix].innhold + "</p>" + `<button id="deletePost" onclick="deletePost(` + postDataDeleteId + `)">Slett Post</button>` + `<hr id="hrPost">` + "</div>";
                 }
             }
             let queDataDeleteId = queData[i].id;
@@ -481,8 +484,8 @@
             liste.innerHTML += 
             `<div id="liste" class="liClass-` + i + `">` + 
             "<h2>" + queData[i].title + "</h2>" +
-            "<h4>" + queData[i].description + "</h4>" + postDataInnholdPost + "<hr>" +
-            `<button id="deleteList" onclick="deleteList(` + queDataDeleteId + `)">Slett Liste</button>` +
+            "<h4>" + queData[i].description + "</h4>" + postDataInnholdPost + `<div id="listeFooter">` + "<hr>" + 
+            `<button id="deleteList" onclick="deleteList(` + queDataDeleteId + `)">Slett Liste</button>` + `</div>` +
             "</div>";
             
             postDataInnholdPost = "";
@@ -507,6 +510,30 @@
                     method:"POST",
                     body:JSON.stringify({
                         deleteListId:deleteListId
+                    }),
+                    headers: {
+                        "Content-Type": "application/json; charset=utf-8"
+                        
+                    },
+                }).then(function(data){
+                    if(data.status < 400){
+                        return data.json();
+                    }
+                }).then(function(existingposts){
+                    clearScreen();
+                    displayUserListView();
+                    //displayExistingLists(); //Oppdaterer listen med lister når man lager ny liste
+                }).catch(err =>{
+                console.error(err);
+            });
+    }
+    
+    function deletePost(postDataDeleteId){
+        deletePostId = postDataDeleteId;
+        fetch('/app/list/post/delete',{
+                    method:"POST",
+                    body:JSON.stringify({
+                        deletePostId:deletePostId
                     }),
                     headers: {
                         "Content-Type": "application/json; charset=utf-8"
@@ -557,15 +584,17 @@
     function updatePost(){
         updatePostId = kategorierPostId;
         
-        let oppdaterOverskrift = document.getElementById("oppdaterOverskrift").value;
-        let oppdaterPostInnhold = document.getElementById("oppdaterPostInnhold").value;
+        let oppdaterOverskrifter = document.getElementById("oppdaterOverskrift").value;
+        let oppdaterPostInnholder = document.getElementById("oppdaterPostInnhold").value;
+        
+        console.log(updatePostId);
         
         fetch('/app/list/post/update',{
                     method:"POST",
                     body:JSON.stringify({
                         updatePostId:updatePostId,
-                        oppdaterOverskrift:oppdaterOverskrift,
-                        oppdaterPostInnhold:oppdaterPostInnhold
+                        oppdaterOverskrift:oppdaterOverskrifter,
+                        oppdaterPostInnhold:oppdaterPostInnholder
                     }),
                     headers: {
                         "Content-Type": "application/json; charset=utf-8"
@@ -614,6 +643,7 @@
         let valg = document.getElementById("kategorierPost").value;
         console.log(valg);
         kategorierPostId = valg;
+        console.log(kategorierPostId);
     }
     
     function displayError(msg) {

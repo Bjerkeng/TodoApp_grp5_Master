@@ -82,6 +82,7 @@ form {
     vertical-align: top;
     width: 25%;
     min-height: 350px;
+    position: relative;
 }
 
 #container{
@@ -410,10 +411,34 @@ button:hover {
 #deleteList:hover{
     opacity: 0.8;
 }
-hr {
+#hrPost {
     border: 0;
     height: 0;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     margin-top: 40px;
+}
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+#deletePost {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #fb4032;
+    font-family: "open-sans", sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    display: inline-block;
+    float: left;
+    padding-left: 0px;
+}
+#listeFooter{
+    width: 85%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
 }

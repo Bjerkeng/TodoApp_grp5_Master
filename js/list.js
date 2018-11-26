@@ -14,7 +14,7 @@ router.get("/app/lists", async function(req,res,next){
 });
 
 router.get("/app/posts", async function(req,res,next){
-    let query = "Select * from posts where userid = " + req.query.token;
+    let query = "Select * from posts where userid = " + req.query.token + " and active = 1";
     //listid = " + req.body.listeid + " and 
     let posts = await db.select(query)
     
@@ -65,6 +65,22 @@ router.post("/app/list/delete", async function(req,res,next){
     
 });
 
+router.post("/app/list/post/delete", async function(req,res,next){
+
+    let deletePostId = req.body.deletePostId;
+    let query = `UPDATE posts SET active = '0' WHERE postid = '${deletePostId}'`;
+    
+    console.log(query);
+
+    let post = await db.update(query) 
+    if(post){
+    res.status(200).json(JSON.stringify(post)).end()
+        }else{
+            res.status(500).end()
+        }
+    
+});
+
 router.post("/app/list/update", async function(req,res,next){
 
     let updateListId = req.body.updateListId;
@@ -88,7 +104,7 @@ router.post("/app/list/post/update", async function(req,res,next){
 
     let updatePostId = req.body.updatePostId;
     let oppdaterOverskrift = req.body.oppdaterOverskrift;
-    let oppdaterInnhold = req.body.oppdaterPostInnhold;
+    let oppdaterPostInnhold = req.body.oppdaterPostInnhold;
 
     let query = `UPDATE posts SET tittel = '${oppdaterOverskrift}', innhold = '${oppdaterPostInnhold}' WHERE postid = '${updatePostId}'`;
     
