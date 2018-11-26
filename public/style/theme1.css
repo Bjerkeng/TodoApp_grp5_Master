@@ -4,7 +4,7 @@ html, body{
 
 body{
     margin: 0px;
-    background: #2f2f2f!important; 
+    background: linear-gradient(36deg, #171b2a 25% , #2f3754 80%);
     color: rgba(0, 0, 0, 0);
 }
 
@@ -248,7 +248,7 @@ button:hover {
 #divPostForm{
     display: inline-block;
     padding: 5px;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.3);
     vertical-align: top;
     width: 41%;
     margin-left: 17px;
@@ -279,7 +279,7 @@ button:hover {
 #divTaskForm{
     display: inline-block;
     padding: 5px;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.3);
     vertical-align: top;
     width: 41%;
     margin-right: 17px;
@@ -499,7 +499,7 @@ hr {
 #divOppdaterTaskForm {
     display: inline-block;
     padding: 5px;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.3);
     vertical-align: top;
     width: 41%;
     margin-right: 17px;
@@ -525,7 +525,7 @@ hr {
 #divOppdaterPostForm {
     display: inline-block;
     padding: 5px;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.3);
     vertical-align: top;
     width: 41%;
     margin-left: 17px;
