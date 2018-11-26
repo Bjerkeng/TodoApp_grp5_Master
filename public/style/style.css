@@ -56,7 +56,14 @@ h4 {
     margin-top: -15px;
 }
 
-
+h5 {
+    text-align: left;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-family: "Lato", sans-serif;
+    color: #729afe;
+    margin-bottom: 0px;
+}
 
 form {
     width: 75%;
@@ -387,4 +394,10 @@ button:hover {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+#liste p {
+    color: #739afe;
+    text-align: left;
+    margin-top: 0px;
 }
