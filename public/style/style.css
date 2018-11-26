@@ -507,3 +507,15 @@ hr {
     font: 400 13.3333px Arial;
     padding-left: 15px;
 }
+
+#submitOppdaterTask{
+    float:left;
+    width: 25%;
+    background-color: #729afe;
+    color: white;
+    padding: 14px 20px;
+    margin-top: 60px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
