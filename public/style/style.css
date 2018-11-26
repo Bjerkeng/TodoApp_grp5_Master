@@ -1,4 +1,5 @@
-body{
+html, body{
+    min-height: 100%;
     margin: 0px;
     background: linear-gradient(36deg, #21D4FD 25% , #D621FF 80%);
 }
@@ -9,8 +10,6 @@ h1 {
     text-transform: uppercase;
     text-align: center;
     color: white;
-    
-
 }
 
 #login-form h1{
@@ -62,15 +61,12 @@ form {
 
 #liste {
     display: inline-block;
-    margin-right: 10px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin: 15px;
     background-color: white;
     padding-left: 25px;
     padding-right: 25px;
     vertical-align: bottom;
-    width: 30%;
+    width: 25%;
 }
 
 #container{
@@ -86,8 +82,8 @@ form {
     width: auto;
     margin-left:auto;
     margin-right: auto;
-    margin-top: 50px;
-
+    margin-top: 6%;
+    margin-bottom: 4%;
 
 }
 
@@ -158,7 +154,7 @@ button:hover {
 }
 
 
-#createUserBt {
+#createUserBt{
     width: 100%;
     background-color: #729afe;
     color: white;
@@ -237,46 +233,46 @@ button:hover {
 
 
 
-#divTaskForm {
-
+#divPostForm {
     display: inline-block;
     padding: 5px;
-    background-color: gainsboro;
+    background-color: white;
     vertical-align: top;
-
-
-    width: 40%;
-    margin-right: 20px;
+    width: 41%;
+    margin-left: 17px;
     margin-top: 50px;
     margin-bottom: 50px;
-    border-radius: 20px;
+    border-radius: 5px;
     padding-top: 20px;
     padding-bottom: 20px;
     height: 255px;
-
-
-
 }
 
-#divPostForm {
+#divPostForm h3 {
+     background: -webkit-linear-gradient(36deg, #21D4FD -5%, #D621FF 91%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
+#divTaskForm {
     display: inline-block;
     padding: 5px;
-    background-color: gainsboro;
+    background-color: white;
     vertical-align: top;
-
-    width: 40%;
-    margin-left: 20px;
+    width: 41%;
+    margin-right: 17px;
     margin-top: 50px;
     margin-bottom: 50px;
-    border-radius: 20px;
+    border-radius: 5px;
     padding-top: 20px;
     padding-bottom: 20px;
     height: 255px;
+}
 
-
-
-
+#divTaskForm h3 {
+     background: -webkit-linear-gradient(36deg, #21D4FD -5%, #D621FF 91%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 #overskrift {
@@ -352,5 +348,5 @@ button:hover {
     border-radius: 20px;
     padding-top: 20px;
     padding-bottom: 20px;
-    height: 370px;
+    height: 325px;
 }
