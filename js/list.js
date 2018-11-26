@@ -84,7 +84,7 @@ router.post("/app/list/update", async function(req,res,next){
     
 });
 
-router.post("/app/post/update", async function(req,res,next){
+router.post("/app/list/post/update", async function(req,res,next){
 
     let updatePostId = req.body.updatePostId;
     let oppdaterOverskrift = req.body.oppdaterOverskrift;
