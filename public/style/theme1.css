@@ -411,3 +411,27 @@ option {
     text-align: left;
     margin-top: 0px;
 }
+
+
+#deleteList {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #fb4032;
+    font-family: "open-sans", sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    display: inline-block;
+    float: right;
+    margin-bottom: 10px;
+}
+#deleteList:hover{
+    opacity: 0.8;
+}
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin-top: 40px;
+}
