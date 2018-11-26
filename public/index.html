@@ -119,6 +119,8 @@
     var authenticationToken = null;
     const DEBUG = true;
     let listeid;
+    let postDataInnhold;
+    let postDatainnholdPost;
     
     ////////////////////////////////////////////////////////////
     //Templates
@@ -240,7 +242,6 @@
               
                 //Om autentisering har gått bra - Viser listesiden
                 displayUserListView();
-
             }).catch(function (err) {
                 // fetch could not complete the request.
                 displayError(err.message);
@@ -256,7 +257,6 @@
             let form = document.getElementById("createUserForm");
             form.onsubmit = function(evt){
                 evt.preventDefault();
-
                 let userName = document.getElementById("userName").value;
                 let password = document.getElementById("password").value;
                 let email = document.getElementById("email").value;
@@ -273,7 +273,6 @@
                     headers: {
                         "Content-Type": "application/json; charset=utf-8"
                     },
-
                 }).then(function(data){
                     if(data.status < 400){
                         return data.json();
@@ -283,7 +282,6 @@
                         //We have a newly created user!!
                         clearScreen();
                         displayLoginForm();
-
                     }
                 }).catch(err =>{
                 console.error(err);
@@ -292,14 +290,12 @@
     } //Lage Bruker
     
     ////////////////////////////////////////////////////////////
-
     function displayUserListView(){
         clearScreen();
         let createTaskForm =  createElementFromTemplate("#createTaskTemplate");
         document.getElementById("content").appendChild(createTaskForm);
         submitTask.onclick = function (evt) {
           //evt.preventDefault();
-
                 let tittel = document.getElementById("tittel").value;
                 let innhold = document.getElementById("innhold").value;
                 let dueDate = "";
@@ -317,7 +313,6 @@
                         "Content-Type": "application/json; charset=utf-8"
                         
                     },
-
                 }).then(function(data){
                     if(data.status < 400){
                         return data.json();
@@ -331,7 +326,6 @@
         }
         submitPost.onclick = function (evt) {
                 //evt.preventDefault();
-
                 let overskrift = document.getElementById("overskrift").value;
                 let postinnhold = document.getElementById("postinnhold").value;
                 let liste = document.getElementById("kategorier").value;
@@ -350,7 +344,6 @@
                         "Content-Type": "application/json; charset=utf-8"
                         
                     },
-
                 }).then(function(data){
                     if(data.status < 400){
                         return data.json();
@@ -376,7 +369,6 @@
                     headers: {
                         "Content-Type": "application/json; charset=utf-8"
                     },
-
                 }).then(function(data){
                     if(data.status < 400){
                         return data.json();
@@ -394,7 +386,6 @@
                     headers: {
                         "Content-Type": "application/json; charset=utf-8"
                     },
-
                 }).then(function(data){
                     if(data.status < 400){
                         return data.json();
@@ -410,12 +401,19 @@
         var liste = document.getElementById("lister")
         liste.innerHTML = "";
         for(i = 0; i < queData.length; i++){
+            
+            for(ix = 0; ix < postDataInnhold.length; ix++){
+                if(queData[i].id == postDataInnhold[ix].listid){
+                    postDatainnholdPost = "<br>" + postDataInnhold[ix].tittel + "<br>" + postDataInnhold[ix].innhold;
+                }
+            }
+            
             //console.log(queData[i]);
             liste.innerHTML += 
             `<div id="liste" class="liClass-` + i + `">` + 
             "<h2>" + queData[i].title + "</h2>" +
             "<h4>" + queData[i].description + "</h4>" +
-            
+            postDatainnholdPost +
             "</div>"
 ;
         }
@@ -438,6 +436,7 @@
             console.log(postData);
             for (var ix = 0; ix < postData.length; ix++) {
                 console.log(postData[ix]);
+                postDataInnhold = posData[ix];
             }
         }
     
