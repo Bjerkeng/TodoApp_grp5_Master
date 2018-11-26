@@ -350,7 +350,7 @@
                     }
                 }).then(function(listoflists2){
                     displayExistingPosts();
-                    displayExistingLists(); //Oppdaterer listen med lister når man lager ny liste
+                    //displayExistingLists(); //Oppdaterer listen med lister når man lager ny liste
                     console.log(listoflists2);
                 }).catch(err =>{
                 console.error(err);
@@ -358,7 +358,7 @@
         }
         addElement(createTaskForm);
         displayExistingPosts();
-        displayExistingLists();
+        //displayExistingLists();
         
     } //Lage lister og poster
     
@@ -437,6 +437,7 @@
             console.log(postData);
             postDataInnhold = postData;
             //showList();
+            displayExistingLists();
             for (var ix = 0; ix < postData.length; ix++) {
                 console.log(postData[ix]);
             }
