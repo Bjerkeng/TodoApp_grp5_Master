@@ -120,7 +120,7 @@
     const DEBUG = true;
     let listeid;
     let postDataInnhold;
-    let postDatainnholdPost;
+    let postDataInnholdPost;
     
     ////////////////////////////////////////////////////////////
     //Templates
@@ -409,9 +409,9 @@
                 if(queData[i].id != postDataInnhold[ix].listid){
                     postDataInnholdPost += "";
                 }else if(queData[i].id === postDataInnhold[ix].listid){
-                postDataInnholdPost = "<h5>" + postDataInnhold[ix].tittel + "</h5><br><p>" + postDataInnhold[ix].innhold + "</p>";
+                    postDataInnholdPost = "<h5>" + postDataInnhold[ix].tittel + "</h5><br><p>" + postDataInnhold[ix].innhold + "</p>";
                 }else{
-                postDataInnholdPost += "";  
+                    postDataInnholdPost += "";  
                 }
             }
             
