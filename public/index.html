@@ -113,6 +113,7 @@
 </div>
 </div>
 <script>
+    // Globale Variabler
     const USER_ROLE = 42;
     let authenticatedUser = null;
     var authenticationToken = null;
@@ -131,9 +132,12 @@
         }
     })();
     
+    //Funksjon for å adde et element
     function addElement(element){
             document.getElementById("content").appendChild(element);
-        }
+    }
+    
+    //Funksjon for å tømme skjermen for templates
     function clearScreen(){
         //document.getElementById("content").innerHTML = "";
         let container = document.getElementById("content");
@@ -141,54 +145,39 @@
                 container.removeChild(container.firstChild);
             }
     }
+    
+    //Lager templates
     function createElementFromTemplate(templateID){
         let template = document.querySelector(templateID);
         template = document.importNode(template.content, true);
         return template;
     }
     
-    /* function fetchQuote() {
-            let request = {
-                method: "GET",
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                    'x-access-auth': authenticationToken
-                }
-            }
-            fetch("/app/quote", request).then(function (res) {
-                if (res.status < 400) {
-                    return res.json();
-                } else {
-                    return Promise.reject(new Error("Session not valid. log inn again"));
-                }
-            }).then(function (json) {
-                document.getElementById("quote").textContent = json.quote;
-            }).catch(function (err) {
-                displayError(err.message);
-            });
-        } */ 
     ////////////////////////////////////////////////////////////
-    
+    //Viser loginform
     function displayLoginForm(){
+        //Legger til innhold i template
         let loginForm = createElementFromTemplate("#authenticateUserUITemplate")
-        //loginForm = window.document.body.appendChild(loginForm); 
         
+        //Legger til elementet loginForm i content
         addElement(loginForm);
-        //window.document.body.appendChild(element);
         
+        //Lager variabler for knapper
         let loginBt = document.querySelector("#loginBt");
         let createBt = document.querySelector("#createUserBt");
         
+        //Login knapp på klikk
         loginBt.onclick = function(evt){
-            console.log("login bt clicked")
+            
+            //Hindrer formen i å sendes inn på klikk
             evt.preventDefault();
             hideError();
             
+            //Tar vare på brukernavn og passord
             let username = document.getElementById("userName").value;
             let password = document.getElementById("password").value;
-            //let email = document.getElementById("email").value;
             
+            //kjører autentisering
             authenticateUser(username, password);
             
             /*if(username.length > 0 && password.length > 0){
@@ -212,18 +201,19 @@
                 alert("danger danger")
             }*/
         }
-        
+        //Create account knapp på klikk
         createBt.onclick = function(evt){
+            //tømmer template og laster inn login template
             clearScreen();
             displayCreateUserForm();
-            console.log("Create user bt clicked")
         }
     } //Logge inn
     
+    //Funksjon for autentisering
     function authenticateUser(username, password) {
+            //logger brukernavn og passord før hash
             log("Starting authentication request", `Username ${username}`, `Password ${password}`);
-            // We are going to base our authentication on basic authentication. This is a authentication scheme suported by http (RFC 7617)
-            // Read more about it at https://en.wikipedia.org/wiki/Basic_access_authentication and https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme
+           
             let credentials = `Basic ${btoa(username + ":" + password)}`; // This creates a string that looks similar to  "Basic KL9zxHppU2VCX". btoa is a function of the window object.
             let request = {
                 method: "GET",
@@ -247,7 +237,8 @@
             }).then(function (responsJSON) {
                 authenticationToken = responsJSON.auth; // Because this is where the server puts the token.
                 authenticatedUser = responsJSON.user; // Information about the user. 
-
+              
+                //Om autentisering har gått bra - Viser listesiden
                 displayUserListView();
 
             }).catch(function (err) {
@@ -396,8 +387,6 @@
                         return data.json();
                     }
                 }).then(function(json){
-                    
-                    console.log(json);
                     showList(json);
                 }).catch(err =>{
                     console.error(err);
@@ -416,7 +405,6 @@
                         return data.json();
                     }
                 }).then(function(poster){
-                    console.log(poster);
                     showPosts(poster);
                 }).catch(err =>{
                     console.error(err);
@@ -427,12 +415,7 @@
         var liste = document.getElementById("lister")
         liste.innerHTML = "";
         for(i = 0; i < queData.length; i++){
-            /*
-            if(queData[i].id == postData.listid){
-                post += postData.overskrift + postData.innhold
-            }*/
-            
-            console.log(queData[i]);
+            //console.log(queData[i]);
             liste.innerHTML += 
             `<div id="liste" class="liClass-` + i + `">` + 
             "<h2>" + queData[i].title + "</h2>" +
