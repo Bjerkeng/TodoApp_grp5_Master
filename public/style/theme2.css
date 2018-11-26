@@ -129,15 +129,13 @@ form {
 
 
 #loginBt{
-
     width: 100%;
-    background-color: #f55285;
+    background-color: #f78577;
     color: white;
     padding: 14px 20px;
     border: none;
     border-radius: 4px;
     margin-top: 20px;
-
     cursor: pointer;
 }
 
@@ -146,24 +144,20 @@ button:hover {
 }
 
 .createUserBt {
-
     width: 100%;
-    background-color: #f55285;
+    background-color: #f78577;
     color: white;
     padding: 14px 20px;
     border: none;
     border-radius: 4px;
-
     margin-top: 20px;
-
     cursor: pointer;
-
 }
 
 
 #createUserBt{
     width: 100%;
-    background-color: #f55285;
+    background-color: #f78577;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -175,7 +169,7 @@ button:hover {
 
 #createNewUser {
     width: 100%;
-    background-color: steelblue;
+    background-color: #f78577;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -189,11 +183,8 @@ button:hover {
     margin-bottom: 15px;
 }
 #theme{
-    
     height:100%;
     width:100%;
-
-
 }
 #footer {
     width: 100%;
@@ -367,7 +358,7 @@ button:hover {
 #submitPost{
     float:left;
     width: 25%;
-    background-color: #f55285;
+    background-color: #f78577;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -378,7 +369,7 @@ button:hover {
 #submitTask{
     float:left;
     width: 25%;
-    background-color: #f55285;
+    background-color: #f78577;
     color: white;
     padding: 14px 20px;
     margin-top: 90px;
