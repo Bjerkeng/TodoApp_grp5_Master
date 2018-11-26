@@ -241,7 +241,7 @@ button:hover {
 
 
 
-#divPostForm {
+#divPostForm, #divOppdaterPostForm {
     display: inline-block;
     padding: 5px;
     background-color: white;
@@ -256,7 +256,7 @@ button:hover {
     height: 380px;
 }
 
-#divPostForm h3 {
+#divPostForm, #divOppdaterPostForm h3 {
      background: -webkit-linear-gradient(36deg, #ffda6a -10%, #ff11a5 31%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -264,14 +264,14 @@ button:hover {
     margin-bottom: 0px;
 }
 
-#divPostForm p{
+#divPostForm, #divOppdaterPostForm p{
     color: #f55285;
     font-family: "open-sans", sans-serif;
     font-size: 12px;
     text-align: left;
 }
 
-#divTaskForm {
+#divTaskForm, #divOppdaterTaskForm {
     display: inline-block;
     padding: 5px;
     background-color: white;
@@ -286,14 +286,14 @@ button:hover {
     height: 380px;
 }
 
-#divTaskForm h3 {
+#divTaskForm, #divOppdaterTaskForm h3 {
      background: -webkit-linear-gradient(36deg, #ffda6a -10%, #ff11a5 31%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: left;
     margin-bottom: 0px;
 }
-#divTaskForm p{
+#divTaskForm, #divOppdaterTaskForm p{
     color: #f55285;
     font-family: "open-sans", sans-serif;
     font-size: 12px;
