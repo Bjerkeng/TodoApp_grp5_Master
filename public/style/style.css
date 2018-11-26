@@ -484,7 +484,7 @@ hr {
     text-align: left;
 }
 
-#oppdaterTittel #oppdaterInnhold{
+#oppdaterTittel, #oppdaterInnhold{
     width: 115%;
     padding: 12px 20px;
     margin: 8px 0;
