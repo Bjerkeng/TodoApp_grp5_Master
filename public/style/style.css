@@ -519,6 +519,18 @@ hr {
     border-radius: 4px;
     cursor: pointer;
 }
+#submitOppdaterPost{
+    margin-top: 7px;  
+    float:left;
+    width: 25%;
+    background-color: #729afe;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}    
+
 #oppdaterPostInnhold {
     width: 115%;
     padding: 12px 20px;
