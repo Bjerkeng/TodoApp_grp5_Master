@@ -18,6 +18,7 @@
 <div id="container">
 <div id="header">
 <h1>ToDo Applikasjonen</h1>
+    <p>Dette er en applikasjon laget i faget DAT MM-200. Applikasjonen er laget med node.js og skal kunne lage og autentisere brukere. Brukerne skal kunne lage lister og fylle listene med innhold.</p>
 </div>
 <div id="content">
 </div>
@@ -79,30 +80,32 @@
     <template id="createTaskTemplate">
         <div id="divTaskForm">
         <form id="createTaskForm">
-            <h3>Create new list</h3>
+            <h3>Lag en ny liste</h3>
+            <p>Her kan du legge til en ny liste med tittel og beskrivelse</p>
             <label for="task"></label>
-            <input type="text" id="tittel" placeholder="Liste-Tittel"><br>
-
+            <input type="text" id="tittel" placeholder="Listenavn"><br>
             <label for="description"></label>
-            <input type="text" id="innhold" placeholder="Liste-Beskrivelse"><br>
-            
+            <input type="text" id="innhold" placeholder="Beskrivelse"><br>
             <button type="button" id="submitTask">Submit</button>
         </form>
         </div>
         
         <div id="divPostForm">
         <form id="createPostForm">
-            <h3>Create new task</h3>
+            <h3>Legg til innhold</h3>
+            <p>Her kan du fylle inn valgte liste med innhold</p>
             <label for="task"></label>
             <input type="text" id="overskrift" placeholder="Overskrift"><br>
             <label for="description"></label>
             <textarea name="textarea" id="postinnhold" placeholder="Innhold"></textarea>
             <br>
-            <button type="button" id="submitPost">Submit</button>
             <select id="kategorier" onchange="kategoriValg()"></select>
+            <br>
+            <button type="button" id="submitPost">Submit</button>
         </form>
         </div>
     <h1>Lister</h1>
+    <p>Her vises alle listene du har laget med applikasjonen!</p>
     <div id="lister">           
     </div>
     </template>
