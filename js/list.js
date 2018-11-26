@@ -49,6 +49,22 @@ router.post("/app/list", async function(req,res,next){
     
 });
 
+router.post("/app/list/delete", async function(req,res,next){
+
+    let deleteListId = req.body.deleteListId;
+    let query = `UPDATE lists SET active = '0' WHERE listid = ${deleteListId}`;
+    
+    console.log(query);
+
+    let post = await db.insert(query) 
+    if(post){
+    res.status(200).json(JSON.stringify(post)).end()
+        }else{
+            res.status(500).end()
+        }
+    
+});
+
 router.post('/app/list/posts', async function(req, res, next){
    // let query = "";
     let overskrift = req.body.overskrift;
