@@ -83,6 +83,7 @@ form {
     width: 25%;
     min-height: 350px;
     position: relative;
+    border-radius: 5px;
 }
 
 #container{
