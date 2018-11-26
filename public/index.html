@@ -560,7 +560,7 @@
         let oppdaterOverskrift = document.getElementById("oppdaterOverskrift").value;
         let oppdaterPostInnhold = document.getElementById("oppdaterPostInnhold").value;
         
-        fetch('/app/list/post/update/',{
+        fetch('/app/list/post/update',{
                     method:"POST",
                     body:JSON.stringify({
                         updatePostId:updatePostId,
