@@ -463,3 +463,56 @@ hr {
     position: absolute;
     bottom: 0;
 }
+
+#divOppdaterTaskForm {
+    display: inline-block;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.4);
+    vertical-align: top;
+    width: 41%;
+    margin-right: 17px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 380px;
+}
+#divOppdaterTaskForm h3{
+    background: -webkit-linear-gradient(36deg, #05eee8 -10%, #05eee8 31%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: left;
+    margin-bottom: 0px;
+}
+#divOppdaterTaskForm p{
+    color: #a2a2a2;
+    font-family: "open-sans", sans-serif;
+    font-size: 12px;
+    text-align: left;
+}
+#divOppdaterPostForm {
+    display: inline-block;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.4);
+    vertical-align: top;
+    width: 41%;
+    margin-left: 17px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 380px;
+}
+#divOppdaterPostForm h3{
+    background: -webkit-linear-gradient(36deg, #05eee8 -10%, #05eee8 31%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: left;
+    margin-bottom: 0px;
+}
+#divOppdaterPostForm p{
+    color: #a2a2a2;;
+    font-family: "open-sans", sans-serif;
+    font-size: 12px;
+    text-align: left;
+}
