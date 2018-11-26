@@ -52,7 +52,7 @@ router.post("/app/list", async function(req,res,next){
 router.post("/app/list/delete", async function(req,res,next){
 
     let deleteListId = req.body.deleteListId;
-    let query = `UPDATE lists SET active = '0' WHERE listid = ${deleteListId}`;
+    let query = `UPDATE lists SET active = '0' WHERE listid = '${deleteListId}'`;
     
     console.log(query);
 
