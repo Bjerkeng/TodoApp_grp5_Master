@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const ourServer = express();
 const port = (process.env.PORT || 8080);
 
-//let user = db.select("Selct * from Users where id=123")
 //Modules
 //----------------------------------------------------------------------------
 
@@ -36,47 +35,8 @@ ourServer.listen(ourServer.get('port'), function () {
     console.log('server running', ourServer.get('port'));
 });
 
-//Post, Get, list
-//----------------------------------------------------------------------------
-/* 
-ourServer.get('/app/requsts', function(req,res, next){
-    res.json(studentNames).end();
-})
-
-                       
-ourServer.GET("/api/list/:listID", auth ,function (req, res) {
-    //return list.
-});
-
-
-ourServer.post("/api/user",function (req, res) {
-    res.send(req.body.fornavn).end();
-});
-
-ourServer.get('/app/users', function(req,res,next){
-    let query = "Select * from Users";
-    let users = db.select(query);
-    
-    if(users){
-       res.status(200).json(JSON.parse(users));
-    }else{
-    //??
-    }
-});
-
-ourServer.post('/app/users', function(res,res,next){
-    
-    let userEmail = req.body.email;
-    let userName = req.body.name;
-    let passwordHash = req.body.pswHash;
-    let userRole = req.body.role;
-    
-    let query = `INSERT INTO "public"."Users"("email", "username", "hash", "role") VALUES('${userEmail}','${userName}', '${passwordHash}', ${userRole}) RETURNING "id", "email", "hash", "role"`;
-    
-    let code = db.insert(query) ? 200:500;
-    res.status(code).json({}).end();
-})
-*/
+//Autentisering
+//--------------------------------------------------------------------------
 
 // All request for authentication will come to this one spot. 
 // This is for demonstration purposes. A more useful approach would be to make authentication/authorization into a middleware module 
@@ -174,27 +134,6 @@ ourServer.get("/app/quote", validateAuthentication, function (req, res, next) {
 });
 
 // utility functions ------------------------------------------------------------------------------------
-
-function getRandomQuote() {
-    const quotes = ["The strength of JavaScript is that you can do anything. The weakness is that you will.",
-        "Any app that can be written in JavaScript, will eventually be written in JavaScript.",
-        "JavaScript is the only language that I’m aware of that people feel they don’t need to learn before they start using it.",
-        "If you are choosing a JavaScript library purely based on popularity, I think you deserve what you get.",
-        "It’s not a bug. It’s an undocumented feature!",
-        "I don’t care if it works on your machine! We are not shipping your machine!",
-        "Things aren’t always #000000 and #FFFFFF",
-        "The best thing about a boolean is even if you are wrong, you are only off by a bit.",
-        "Without requirements or design, programming is the art of adding bugs to an empty text file.",
-        "The trouble with programmers is that you can never tell what a programmer is doing until it’s too late."
-    ];
-
-    let quoteIndex = getRandomNumber(quotes.length - 1);
-    return quotes[quoteIndex];
-}
-
-function getRandomNumber(maxValue) {
-    return Math.round(Math.random() * maxValue);
-}
 
 function log(...messages) {
     if (DEBUG) {
