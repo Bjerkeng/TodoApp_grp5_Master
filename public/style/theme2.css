@@ -4,7 +4,8 @@ html, body{
 
 body{
     margin: 0px;
-    background: linear-gradient(36deg, #ffda6a 35% , #ff11a5 90%);    
+    background: linear-gradient(36deg, #ffda6a 35% , #ff11a5 90%);
+    color: white;
 }
 
 p {
