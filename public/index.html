@@ -99,7 +99,9 @@
             <label for="description"></label>
             <textarea name="textarea" id="postinnhold" placeholder="Innhold"></textarea>
             <br>
-            <select id="kategorier" onchange="kategoriValg()"></select>
+            <select id="kategorier" onchange="kategoriValg()">
+            <option value="0"></option>
+            </select>
             <br>
             <button type="button" id="submitPost">Submit</button>
         </form>
@@ -318,7 +320,7 @@
                         return data.json();
                     }
                 }).then(function(listoflists2){
-                    displayExistingLists(); //Oppdaterer listen med lister når man lager ny liste
+                    displayExistingPosts(); //Oppdaterer listen med lister når man lager ny liste
                     console.log(listoflists2);
                 }).catch(err =>{
                 console.error(err);
