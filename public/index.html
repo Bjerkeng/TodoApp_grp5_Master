@@ -106,6 +106,36 @@
             <button type="button" id="submitPost">Submit</button>
         </form>
         </div>
+        
+        <div id="divOppdaterTaskForm">
+        <form id="oppdaterTaskForm">
+            <h3>Oppdater en liste</h3>
+            <p>Her kan du oppdatere dine eksisterende lister sine tittler og beskrivelser</p>
+            <select id="kategorierListeOppdatering" onchange="kategoriValgListeOppdatering()">
+            <option value="0">Velg en liste...</option>
+            </select>
+            <label for="task"></label>
+            <input type="text" id="oppdaterTittel" placeholder="Angi nytt Listenavn"><br>
+            <label for="description"></label>
+            <input type="text" id="oppdaterInnhold" placeholder="Angi ny Beskrivelse"><br>
+            <button type="button" id="submitTask">Submit</button>
+        </form>
+        </div>
+        
+        <div id="divOppdaterPostForm">
+        <form id="oppdaterPostForm">
+            <h3>Oppdater en Post i en liste</h3>
+            <p>Her kan du oppdatere dine eksisterende poster som befinner seg inni listene dine</p>
+            <select id="kategorierPostOppdatering" onchange="kategoriValgPostOppdatering()">
+            <option value="0">Velg en liste...</option>
+            </select>
+            <label for="task"></label>
+            <input type="text" id="oppdaterOverskrift" placeholder="Angi ny Overskrift"><br>
+            <label for="description"></label>
+            <textarea name="textarea" id="oppdaterPostInnhold" placeholder="Angi nytt innhold"></textarea>
+            <button type="button" id="submitTask">Submit</button>
+        </form>
+        </div>
     <h1>Lister</h1>
     <p>Her vises alle listene du har laget med applikasjonen!</p>
     <div id="lister">           
