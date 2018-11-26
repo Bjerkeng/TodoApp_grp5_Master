@@ -56,7 +56,7 @@ router.post("/app/list/delete", async function(req,res,next){
     
     console.log(query);
 
-    let post = await db.insert(query) 
+    let post = await db.update(query) 
     if(post){
     res.status(200).json(JSON.stringify(post)).end()
         }else{
