@@ -9,7 +9,7 @@ body{
 
 p {
     text-align: center;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.8);
     font-family: "open-sans", sans-serif;
     font-size: 12px;
 }
@@ -59,7 +59,7 @@ h4 {
 
 
 form {
-    width: 88%;
+    width: 75%;
     height: 500px;
     padding-left: 50px;
     padding-right: 50px;
@@ -256,7 +256,7 @@ button:hover {
 }
 
 #divPostForm h3 {
-     background: -webkit-linear-gradient(36deg, #21D4FD -5%, #D621FF 91%);
+     background: -webkit-linear-gradient(36deg, #21D4FD -10%, #D621FF 31%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: left;
@@ -286,7 +286,7 @@ button:hover {
 }
 
 #divTaskForm h3 {
-     background: -webkit-linear-gradient(36deg, #21D4FD -5%, #D621FF 91%);
+     background: -webkit-linear-gradient(36deg, #21D4FD -10%, #D621FF 31%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: left;
@@ -299,56 +299,44 @@ button:hover {
     text-align: left;
 }
 #overskrift {
-
-    width: 100%;
+    width: 115%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-
 }
 
 #postinnhold {
-
-
-    width: 100%;
+    width: 115%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-
-
-
+    font: 400 13.3333px Arial;
 }
 
 #tittel {
-
-    width: 100%;
+    width: 115%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-
-
 }
 
 #innhold {
-
-    width: 100%;
+    width: 115%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-
-
 }
 
 #kategorier {
@@ -356,7 +344,7 @@ button:hover {
     box-sizing: border-box;
     font-size: 16px;
     float: left;
-    width: 100%;
+    width: 115%;
     height: 40px;
     margin-bottom: 20px;
     text-rendering: auto;
