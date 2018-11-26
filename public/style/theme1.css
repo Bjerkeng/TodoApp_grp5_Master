@@ -393,7 +393,7 @@ button:hover {
     border-radius: 4px;
     cursor: pointer;
 }
-#submitTask{
+#submitTask, #submitOppdaterTask, #submitOppdaterPost{
     float:left;
     width: 25%;
     background-color: rgba(255, 255, 255, 0.04);
