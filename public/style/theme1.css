@@ -4,7 +4,8 @@ html, body{
 
 body{
     margin: 0px;
-    background: #2f2f2f!important;    
+    background: #2f2f2f!important; 
+    rgba(0, 0, 0, 0);
 }
 
 p {
