@@ -342,14 +342,14 @@ button:hover {
     box-sizing: border-box;
 }
 
-#kategorier {
+#kategorier, #kategorierListe, #kategorierPost {
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 16px;
     float: left;
     width: 115%;
     height: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-rendering: auto;
     color: #797979;
     font: 400 13.3333px Arial;
