@@ -1,6 +1,6 @@
 body{
     margin: 0px;
-    background-color: #dee7ec;
+    background: linear-gradient(36deg, #21D4FD 25% , #D621FF 80%);
 }
 
 h1 {
@@ -8,9 +8,8 @@ h1 {
     font-size: 43px;
     text-transform: uppercase;
     text-align: center;
-    background: -webkit-linear-gradient(36deg, #21D4FD 25% , #D621FF 80%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: white;
+    
 
 }
 
