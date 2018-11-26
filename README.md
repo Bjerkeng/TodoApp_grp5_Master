@@ -1,2 +1,2 @@
-# TodoApp_grp5_kladd
+# TodoApp_grp5_Master
 Vår applikasjon
