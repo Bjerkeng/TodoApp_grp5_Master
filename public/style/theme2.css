@@ -1,10 +1,418 @@
-body {
+html, body{
+    min-height: 100%;
+}
 
-    background-color: coral;
+body{
+    margin: 0px;
+    background: linear-gradient(36deg, #ffda6a 35% , #ff11a5 90%);    
+}
+
+p {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: "open-sans", sans-serif;
+    font-size: 12px;
+}
+
+h1 {
+    font-family: 'Lato', sans-serif;
+    font-size: 43px;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+}
+
+#login-form h1{
+    font-family: 'Lato', sans-serif;
+    font-size: 26px;
+    text-transform: uppercase;
+    text-align: center;
+    background: -webkit-linear-gradient(36deg, #ffda6a 35%, #ff11a5 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
 }
 
-h1{
+h2 {
+    font-size: 22px;
+    text-transform: uppercase;
+    font-family: "Lato", sans-serif;
+    color: #ff668c;
+}
 
-    color: pink;
+h3{
+
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+}
+
+h4 {
+    font-size: 12px;
+    font-family: "open-sans", sans-serif;
+    font-weight: 100!important;
+    color: rgba(140, 58, 78, 0.69);
+    margin-top: -15px;
+}
+
+h5 {
+    text-align: left;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-family: "Lato", sans-serif;
+    color: #ff668c;
+    margin-bottom: 0px;
+}
+
+form {
+    width: 75%;
+    height: 500px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+
+#liste {
+    display: inline-block;
+    margin: 15px;
+    background-color: white;
+    padding-left: 25px;
+    padding-right: 25px;
+    vertical-align: top;
+    width: 25%;
+}
+
+#container{
+    max-width: 100%;
+    margin-left:auto;
+    margin-right: auto;
+
+
+
+
+}
+#header{
+    width: auto;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 6%;
+    margin-bottom: 4%;
+
+}
+
+
+#content{
+    text-align: center;
+    vertical-align: center;
+}
+
+
+#userName{
+    width: 100%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#password{
+
+    width: 100%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#email{
+    width: 100%;
+    padding: 12px 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+#loginBt{
+    width: 100%;
+    background-color: #ff668c;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.createUserBt {
+    width: 100%;
+    background-color: #ff668c;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+
+#createUserBt{
+    width: 100%;
+    background-color: #ff668c;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+
+    cursor: pointer;
+}
+
+#createNewUser {
+    width: 100%;
+    background-color: #ff668c;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#rememberMe{
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+#theme{
+    height:100%;
+    width:100%;
+}
+#footer {
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0);
+    height: 50px;
+}
+
+#btn-top {
+    background-color: white;
+    cursor: pointer;
+    float: right;
+    border: none;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 100%;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-family: "Lato", sans-serif;
+    color: #f55285;
+}
+
+
+#btn-top:focus {
+    outline: none!important;
+}
+
+*[hidden]{
+    display: none;
+}
+
+#description {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+
+
+#divPostForm {
+    display: inline-block;
+    padding: 5px;
+    background-color: white;
+    vertical-align: top;
+    width: 41%;
+    margin-left: 17px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 380px;
+}
+
+#divPostForm h3 {
+     background: -webkit-linear-gradient(36deg, #ffda6a -10%, #ff11a5 31%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+#divPostForm p{
+    color: #f55285;
+    font-family: "open-sans", sans-serif;
+    font-size: 12px;
+    text-align: left;
+}
+
+#divTaskForm {
+    display: inline-block;
+    padding: 5px;
+    background-color: white;
+    vertical-align: top;
+    width: 41%;
+    margin-right: 17px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 380px;
+}
+
+#divTaskForm h3 {
+     background: -webkit-linear-gradient(36deg, #ffda6a -10%, #ff11a5 31%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: left;
+    margin-bottom: 0px;
+}
+#divTaskForm p{
+    color: #f55285;
+    font-family: "open-sans", sans-serif;
+    font-size: 12px;
+    text-align: left;
+}
+#overskrift {
+    width: 115%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#postinnhold {
+    width: 115%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font: 400 13.3333px Arial;
+    resize: none;
+    height: 90px;
+}
+
+#tittel {
+    width: 115%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#innhold {
+    width: 115%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#kategorier {
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    float: left;
+    width: 115%;
+    height: 40px;
+    margin-bottom: 20px;
+    text-rendering: auto;
+    color: #797979;
+    font: 400 13.3333px Arial;
+    padding-left: 15px;
+}
+
+#login-form{
+    width: 410px;
+    margin: 0 auto;
+    background-color: white;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 325px;
+}
+#submitPost{
+    float:left;
+    width: 25%;
+    background-color: #ff668c;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#submitTask{
+    float:left;
+    width: 25%;
+    background-color: #ff668c;
+    color: white;
+    padding: 14px 20px;
+    margin-top: 125px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#liste p {
+    color: #ff668c;
+    text-align: left;
+    margin-top: 0px;
+}
+
+
+#deleteList {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #fb4032;
+    font-family: "open-sans", sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    display: inline-block;
+    float: right;
+    margin-bottom: 10px;
+}
+#deleteList:hover{
+    opacity: 0.8;
+}
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin-top: 40px;
 }
