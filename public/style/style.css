@@ -406,8 +406,9 @@ button:hover {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    color: red;
+    color: #fb4032;
     font-family: "open-sans", sans-serif;
+    font-weight: 600;
     font-size: 11px;
     display: inline-block;
     float: right;
@@ -415,4 +416,11 @@ button:hover {
 }
 #deleteList:hover{
     opacity: 0.8;
+}
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin-top: 40px;
 }
