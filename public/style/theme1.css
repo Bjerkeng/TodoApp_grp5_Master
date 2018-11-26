@@ -27,7 +27,9 @@ h1 {
     font-size: 26px;
     text-transform: uppercase;
     text-align: center;
-    color: #05eee8;
+    background: -webkit-linear-gradient(36deg, #05eee8 -10%, #05eee8 31%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
 }
 
@@ -391,4 +393,8 @@ button:hover {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+option {
+    background-color: rgb(27, 27, 27);
 }
