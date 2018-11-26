@@ -405,10 +405,8 @@
         for(i = 0; i < queData.length; i++){
             console.log(queData[i].id);
             for(ix = 0; ix < postDataInnhold.length; ix++){
-                if(queData[i].id == postDataInnhold[ix].listid){
+                while(queData[i].id == postDataInnhold[ix].listid){
                     postDatainnholdPost = "<h5>" + postDataInnhold[ix].tittel + "</h5><br><p>" + postDataInnhold[ix].innhold + "</p>";
-                }else{
-                    postDatainnholdPost = "";
                 }
             }
             
