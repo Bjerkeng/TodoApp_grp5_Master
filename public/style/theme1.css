@@ -332,14 +332,14 @@ button:hover {
 }
 
 #tittel, #oppdaterTittel, #oppdaterInnhold, #oppdaterOverskrift {
-    width: 115%;
+width: 115%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: rgba(0, 0, 0, 0.4);
     border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.19)!important;
     box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.3);
     color: #a2a2a2;
 }
 
