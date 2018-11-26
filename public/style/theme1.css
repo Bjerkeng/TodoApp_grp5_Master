@@ -385,8 +385,10 @@ button:hover {
 #submitPost{
     float:left;
     width: 25%;
-    background-color: rgba(255, 255, 255, 0.04);
-    color: #05eee8;
+    background: -webkit-linear-gradient(90deg, #171b2a 20%, #2f3754 120%);
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color: #15bfbd;
+    font-weight: 600;
     padding: 14px 20px;
     margin: 18px 0;
     border: none;
@@ -396,8 +398,10 @@ button:hover {
 #submitTask{
     float:left;
     width: 25%;
-    background-color: rgba(255, 255, 255, 0.04);
-    color: #05eee8;
+    background: -webkit-linear-gradient(90deg, #171b2a 20%, #2f3754 120%);
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color: #15bfbd;
+    font-weight: 600;
     padding: 14px 20px;
     margin-top: 125px;
     border: none;
@@ -408,8 +412,10 @@ button:hover {
 #submitOppdaterPost{
     float:left;
     width: 25%;
-    background-color: rgba(255, 255, 255, 0.04);
-    color: #05eee8;
+    background: -webkit-linear-gradient(90deg, #171b2a 20%, #2f3754 120%);
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color: #15bfbd;
+    font-weight: 600;
     padding: 14px 20px;
     margin-top: 7px;
     border: none;
@@ -420,8 +426,10 @@ button:hover {
 #submitOppdaterTask{
     float:left;
     width: 25%;
-    background-color: rgba(255, 255, 255, 0.04);
-    color: #05eee8;
+    background: -webkit-linear-gradient(90deg, #171b2a 20%, #2f3754 120%);
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color: #15bfbd;
+    font-weight: 600;
     padding: 14px 20px;
     margin-top: 60px;
     border: none;
