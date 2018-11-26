@@ -315,7 +315,7 @@ button:hover {
     color: #a2a2a2;
 }
 
-#postinnhold {
+#postinnhold, #oppdaterPostInnhold {
     width: 115%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -330,7 +330,7 @@ button:hover {
     color: #a2a2a2;
 }
 
-#tittel {
+#tittel, #oppdaterTittel, #oppdaterInnhold, #oppdaterOverskrift {
     width: 115%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -354,7 +354,7 @@ button:hover {
     color: #a2a2a2;
 }
 
-#kategorier {
+#kategorier, #kategorierListe, #kategorierPost {
     border: rgba(0, 0, 0, 0.4);
     border-radius: 4px;
     box-sizing: border-box;
