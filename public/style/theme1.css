@@ -111,38 +111,40 @@ form {
     width: 100%;
     padding: 12px 20px;
     display: inline-block;
-    border: 1px solid rgba(0, 0, 0, 0.4);
     border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.19)!important;
     box-sizing: border-box;
-    background-color:rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.3);
     color: #a2a2a2;
 }
 #password{
     width: 100%;
     padding: 12px 20px;
     display: inline-block;
-    border: 1px solid rgba(0, 0, 0, 0.4);
     border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.19)!important;
     box-sizing: border-box;
-    background: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.3);
     color: #a2a2a2;
 }
 #email{
     width: 100%;
     padding: 12px 20px;
     display: inline-block;
-    border: 1px solid rgba(0, 0, 0, 0.4);
     border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.19)!important;
     box-sizing: border-box;
-    background: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.3);
     color: #a2a2a2;
 }
 
 
 #loginBt{
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.04);
-    color: #05eee8;
+    background: -webkit-linear-gradient(90deg, #171b2a 20%, #2f3754 120%);
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color: #15bfbd;
+    font-weight: 600;
     padding: 14px 20px;
     border: none;
     border-radius: 4px;
@@ -156,8 +158,10 @@ button:hover {
 
 .createUserBt {
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.04);
-    color: #05eee8;
+    background: -webkit-linear-gradient(90deg, #171b2a 20%, #2f3754 120%);
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color: #15bfbd;
+    font-weight: 600;
     padding: 14px 20px;
     border: none;
     border-radius: 4px;
@@ -171,8 +175,10 @@ button:hover {
 
 #createUserBt{
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.04);
-    color: #05eee8;
+    background: -webkit-linear-gradient(90deg, #171b2a 20%, #2f3754 120%);
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color: #15bfbd;
+    font-weight: 600;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -305,14 +311,14 @@ button:hover {
     text-align: left;
 }
 #overskrift {
-    width: 115%;
+width: 115%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: rgba(0, 0, 0, 0.4);
     border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.19)!important;
     box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.3);
     color: #a2a2a2;
 }
 
@@ -344,14 +350,14 @@ width: 115%;
 }
 
 #innhold {
-    width: 115%;
+width: 115%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: rgba(0, 0, 0, 0.4);
     border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.19)!important;
     box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.3);
     color: #a2a2a2;
 }
 
