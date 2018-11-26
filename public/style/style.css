@@ -401,3 +401,18 @@ button:hover {
     text-align: left;
     margin-top: 0px;
 }
+
+#deleteList {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: red;
+    font-family: "open-sans", sans-serif;
+    font-size: 11px;
+    display: inline-block;
+    float: right;
+    margin-bottom: 10px;
+}
+#deleteList:hover{
+    opacity: 0.8;
+}
