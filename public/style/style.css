@@ -500,7 +500,8 @@ hr {
     float: left;
     width: 115%;
     height: 40px;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
     text-rendering: auto;
     color: #797979;
     font: 400 13.3333px Arial;
