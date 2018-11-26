@@ -118,7 +118,7 @@
             <input type="text" id="oppdaterTittel" placeholder="Angi nytt Listenavn"><br>
             <label for="description"></label>
             <input type="text" id="oppdaterInnhold" placeholder="Angi ny Beskrivelse"><br>
-            <button type="button" id="submitOppdaterTask">Submit</button>
+            <button type="button" id="submitOppdaterTask" onclick="updateList()">Submit</button>
         </form>
         </div>
         
@@ -517,8 +517,8 @@
             });
     }
     
-    function updateList(listid){
-        updateListId = listid;
+    function updateList(kategorierListeId){
+        updateListId = kategorierListeId;
         
         let oppdaterTittel = document.getElementById("oppdaterTittel").value;
         let oppdaterInnhold = document.getElementById("oppdaterInnhold").value;
