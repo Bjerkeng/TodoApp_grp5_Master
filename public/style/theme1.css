@@ -4,7 +4,7 @@ html, body{
 
 body{
     margin: 0px;
-    background: linear-gradient(36deg, #21D4FD 25% , #D621FF 80%);    
+    background-color: #2f2f2f;    
 }
 
 p {
@@ -27,9 +27,7 @@ h1 {
     font-size: 26px;
     text-transform: uppercase;
     text-align: center;
-    background: -webkit-linear-gradient(36deg, #21D4FD 35%, #D621FF 70%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #05eee8;
 
 }
 
@@ -80,10 +78,6 @@ form {
     max-width: 100%;
     margin-left:auto;
     margin-right: auto;
-
-
-
-
 }
 #header{
     width: auto;
@@ -91,7 +85,6 @@ form {
     margin-right: auto;
     margin-top: 6%;
     margin-bottom: 4%;
-
 }
 
 
@@ -105,39 +98,39 @@ form {
     width: 100%;
     padding: 12px 20px;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.4);
     border-radius: 4px;
     box-sizing: border-box;
+    background-color:rgba(0, 0, 0, 0.4);
 }
 #password{
-
     width: 100%;
     padding: 12px 20px;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.4);
     border-radius: 4px;
     box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.4);
 }
 #email{
     width: 100%;
     padding: 12px 20px;
     display: inline-block;
-    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.4);
     border-radius: 4px;
     box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.4);
 }
 
 
 #loginBt{
-
     width: 100%;
-    background-color: #729afe;
-    color: white;
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #05eee8;
     padding: 14px 20px;
     border: none;
     border-radius: 4px;
     margin-top: 20px;
-
     cursor: pointer;
 }
 
@@ -146,10 +139,9 @@ button:hover {
 }
 
 .createUserBt {
-
     width: 100%;
-    background-color: #729afe;
-    color: white;
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #05eee8;
     padding: 14px 20px;
     border: none;
     border-radius: 4px;
@@ -163,8 +155,8 @@ button:hover {
 
 #createUserBt{
     width: 100%;
-    background-color: #729afe;
-    color: white;
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #05eee8;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -175,8 +167,8 @@ button:hover {
 
 #createNewUser {
     width: 100%;
-    background-color: steelblue;
-    color: white;
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #05eee8;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -188,13 +180,12 @@ button:hover {
     margin-top: 5px;
     margin-bottom: 15px;
 }
+
 #theme{
-    
     height:100%;
     width:100%;
-
-
 }
+
 #footer {
     width: 100%;
     position: fixed;
@@ -218,7 +209,6 @@ button:hover {
     color: #05eee8;
 }
 
-
 #btn-top:focus {
     outline: none!important;
 }
@@ -237,8 +227,6 @@ button:hover {
     background-color: #f8f8f8;
     resize: none;
 }
-
-
 
 #divPostForm {
     display: inline-block;
@@ -372,8 +360,8 @@ button:hover {
 #submitPost{
     float:left;
     width: 25%;
-    background-color: #729afe;
-    color: white;
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #05eee8;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -383,8 +371,8 @@ button:hover {
 #submitTask{
     float:left;
     width: 25%;
-    background-color: #729afe;
-    color: white;
+    background-color: rgba(255, 255, 255, 0.04);
+    color: #05eee8;
     padding: 14px 20px;
     margin-top: 125px;
     border: none;
