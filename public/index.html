@@ -111,7 +111,7 @@
         <form id="oppdaterTaskForm">
             <h3>Oppdater en liste</h3>
             <p>Her kan du oppdatere dine eksisterende lister sine tittler og beskrivelser. Velg ønsket liste i nedtrekksmenyen</p>
-            <select id="kategorierListe" onchange="kategoriValg()">
+            <select id="kategorierListe" onchange="kategorierListe()">
             <option value="0">Velg en liste...</option>
             </select>
             <label for="task"></label>
@@ -126,7 +126,7 @@
         <form id="oppdaterPostForm">
             <h3>Oppdater en Post i en liste</h3>
             <p>Her kan du oppdatere dine eksisterende poster som befinner seg inni listene dine</p>
-            <select id="kategorierPost" onchange="kategoriValg()">
+            <select id="kategorierPost" onchange="kategorierPost()">
             <option value="0">Velg en liste...</option>
             </select>
             <label for="task"></label>
@@ -151,6 +151,8 @@
     var authenticationToken = null;
     const DEBUG = true;
     let listeid;
+    let kategorierListeId;
+    let kategorierPostId;
     let postDataInnhold;
     let postDataInnholdPost;
     let deleteListId;
@@ -561,6 +563,20 @@
         let valg = document.getElementById("kategorier").value;
         console.log(valg);
         listeid = valg;
+    }
+    
+    function kategorierListe(){
+        console.log("valg funker");
+        let valg = document.getElementById("kategorierListe").value;
+        console.log(valg);
+        kategorierListeId = valg;
+    }
+    
+    function kategorierPost(){
+        console.log("valg funker");
+        let valg = document.getElementById("kategorierPost").value;
+        console.log(valg);
+        kategorierPostId = valg;
     }
     
     function displayError(msg) {
