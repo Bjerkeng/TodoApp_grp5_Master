@@ -3,7 +3,7 @@ var router = express.Router();
 var db = require("./db.js")
 
 router.get("/app/lists", async function(req,res,next){
-    let query = "Select * from lists where userid = " + req.query.token;
+    let query = "Select * from lists where userid = " + req.query.token + " and active = 1";
     let lists = await db.select(query);
     
     if(lists){
