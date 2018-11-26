@@ -4,7 +4,7 @@ html, body{
 
 body{
     margin: 0px;
-    background-color: #2f2f2f;    
+    background: #2f2f2f!important;    
 }
 
 p {
@@ -35,7 +35,7 @@ h2 {
     font-size: 22px;
     text-transform: uppercase;
     font-family: "Lato", sans-serif;
-    color: #729afe;
+    color: #05eee8;
 }
 
 h3{
@@ -50,7 +50,7 @@ h4 {
     font-size: 12px;
     font-family: "open-sans", sans-serif;
     font-weight: 100!important;
-    color: #729afe;
+    color: #757575;
     margin-top: -15px;
 }
 
@@ -67,7 +67,7 @@ form {
 #liste {
     display: inline-block;
     margin: 15px;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.4);
     padding-left: 25px;
     padding-right: 25px;
     vertical-align: bottom;
@@ -102,6 +102,7 @@ form {
     border-radius: 4px;
     box-sizing: border-box;
     background-color:rgba(0, 0, 0, 0.4);
+    color: #a2a2a2;
 }
 #password{
     width: 100%;
@@ -111,6 +112,7 @@ form {
     border-radius: 4px;
     box-sizing: border-box;
     background: rgba(0, 0, 0, 0.4);
+    color: #a2a2a2;
 }
 #email{
     width: 100%;
@@ -120,6 +122,7 @@ form {
     border-radius: 4px;
     box-sizing: border-box;
     background: rgba(0, 0, 0, 0.4);
+    color: #a2a2a2;
 }
 
 
@@ -226,6 +229,7 @@ button:hover {
     border-radius: 4px;
     background-color: #f8f8f8;
     resize: none;
+    color: #a2a2a2;
 }
 
 #divPostForm {
@@ -241,16 +245,19 @@ button:hover {
     padding-top: 20px;
     padding-bottom: 20px;
     height: 380px;
+    
 }
 
 #divPostForm h3 {
-    color: #05eee8
+    background: -webkit-linear-gradient(36deg, #05eee8 -10%, #05eee8 31%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-align: left;
     margin-bottom: 0px;
 }
 
 #divPostForm p{
-    color: #05eee8;
+    color: #a2a2a2;;
     font-family: "open-sans", sans-serif;
     font-size: 12px;
     text-align: left;
@@ -272,12 +279,14 @@ button:hover {
 }
 
 #divTaskForm h3 {
-    color: #05eee8
+    background: -webkit-linear-gradient(36deg, #05eee8 -10%, #05eee8 31%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-align: left;
     margin-bottom: 0px;
 }
 #divTaskForm p{
-    color: #05eee8;
+    color: #a2a2a2;
     font-family: "open-sans", sans-serif;
     font-size: 12px;
     text-align: left;
@@ -291,6 +300,7 @@ button:hover {
     border-radius: 4px;
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.4);
+    color: #a2a2a2;
 }
 
 #postinnhold {
@@ -305,6 +315,7 @@ button:hover {
     font: 400 13.3333px Arial;
     resize: none;
     height: 90px;
+    color: #a2a2a2;
 }
 
 #tittel {
@@ -316,6 +327,7 @@ button:hover {
     border-radius: 4px;
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.4);
+    color: #a2a2a2;
 }
 
 #innhold {
@@ -327,6 +339,7 @@ button:hover {
     border-radius: 4px;
     box-sizing: border-box;
     background-color: rgba(0, 0, 0, 0.4);
+    color: #a2a2a2;
 }
 
 #kategorier {
@@ -340,7 +353,7 @@ button:hover {
     height: 40px;
     margin-bottom: 20px;
     text-rendering: auto;
-    color: #797979;
+    color: #a2a2a2;
     font: 400 13.3333px Arial;
     padding-left: 15px;
     
