@@ -243,7 +243,7 @@ button:hover {
     border-radius: 5px;
     padding-top: 20px;
     padding-bottom: 20px;
-    height: 345px;
+    height: 380px;
 }
 
 #divPostForm h3 {
@@ -273,7 +273,7 @@ button:hover {
     border-radius: 5px;
     padding-top: 20px;
     padding-bottom: 20px;
-    height: 345px;
+    height: 380px;
 }
 
 #divTaskForm h3 {
@@ -308,6 +308,8 @@ button:hover {
     border-radius: 4px;
     box-sizing: border-box;
     font: 400 13.3333px Arial;
+    resize: none;
+    height: 90px;
 }
 
 #tittel {
@@ -372,7 +374,7 @@ button:hover {
     background-color: #ff668c;
     color: white;
     padding: 14px 20px;
-    margin-top: 90px;
+    margin-top: 125px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
