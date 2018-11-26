@@ -123,6 +123,7 @@
     let listeid;
     let postDataInnhold;
     let postDataInnholdPost;
+    let deleteListId;
     
     ////////////////////////////////////////////////////////////
     //Templates
@@ -331,10 +332,6 @@
                 let overskrift = document.getElementById("overskrift").value;
                 let postinnhold = document.getElementById("postinnhold").value;
                 let liste = document.getElementById("kategorier").value;
-                if(liste = 0){
-                    window.alert("Vennligst velg en liste");
-                    return false;
-                }
                 let dueDate = "";
                 
                 fetch('/app/list/posts',{
@@ -420,7 +417,9 @@
             liste.innerHTML += 
             `<div id="liste" class="liClass-` + i + `">` + 
             "<h2>" + queData[i].title + "</h2>" +
-            "<h4>" + queData[i].description + "</h4>" + postDataInnholdPost + "</div>";
+            "<h4>" + queData[i].description + "</h4>" + postDataInnholdPost +
+            "<button id="deleteList" onclick="deleteList(queData[i].id)">Slett Liste</button>"
+            "</div>";
             
             postDataInnholdPost = "";
         }
@@ -436,6 +435,30 @@
     } // Vise Lister
     
     
+    
+    function deleteList(slettlisteid){
+        deleteListId = slettlisteid;
+        fetch('/app/list/delete',{
+                    method:"POST",
+                    body:JSON.stringify({
+                        deleteListId:deleteListId
+                    }),
+                    headers: {
+                        "Content-Type": "application/json; charset=utf-8"
+                        
+                    },
+                }).then(function(data){
+                    if(data.status < 400){
+                        return data.json();
+                    }
+                }).then(function(existingposts){
+                    displayExistingPosts();
+                    //displayExistingLists(); //Oppdaterer listen med lister når man lager ny liste
+                    console.log(listoflists2);
+                }).catch(err =>{
+                console.error(err);
+            });
+    }
     
 /////////////////////////////////////////////////////////////////
     
