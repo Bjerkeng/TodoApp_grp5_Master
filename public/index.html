@@ -438,15 +438,29 @@
         var kategorier = document.getElementById("kategorier");
         var kategorierPost = document.getElementById("kategorierPost");
         var kategorierListe = document.getElementById("kategorierListe");
-
+        
         for(i = 0; i < queData.length; i++){
             var option = document.createElement("option");
             option.value = queData[i].id;
             option.text = queData[i].title;
             kategorier.add(option);
+        }
+        
+        for(i = 0; i < queData.length; i++){
+            var option = document.createElement("option");
+            option.value = queData[i].id;
+            option.text = queData[i].title;
             kategorierPost.add(option);
+        }
+        
+        for(i = 0; i < queData.length; i++){
+            var option = document.createElement("option");
+            option.value = queData[i].id;
+            option.text = queData[i].title;
             kateogorierListe.add(option);
-            
+        }
+        
+        for(i = 0; i < queData.length; i++){
             console.log(queData[i].id);
             for(ix = 0; ix < postDataInnhold.length; ix++){
                 if(queData[i].id === postDataInnhold[ix].listid){
